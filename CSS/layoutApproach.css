@@ -1,0 +1,261 @@
+main{
+	margin-top: 15%;
+	margin-bottom: 15%;
+	display: grid;
+	grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+	"mainpic"
+	"section"; 
+	  }
+
+
+#mainPic{
+	grid-area: mainpic;
+	background-color: #2a2a2a;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+section{
+	grid-area:section;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3,1fr);
+    /*grid-row-gap:2%;*/
+	grid-template-areas: 
+	"information1"
+	"information2"
+	"information3"
+	"information4";
+}
+
+.bg-image {
+	grid-row:1;
+	grid-column: 1;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../Images/process.svg");
+}
+
+.bg-text {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-self: center;
+	justify-self:center;
+	flex-flow: column;
+	grid-row:1;
+	grid-column: 1;
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+	color: white;
+	font-weight: bold;
+	border-radius: 1%;
+	z-index: 2;
+	width: 40%;
+	height:25%;
+	padding: 20px;
+	text-align: center;
+}
+
+.bg-text h2{
+	text-align: center !important;
+}
+
+@media only screen and (max-width: 767px){
+.bg-text{
+	width:80%;
+	height:25%;
+}
+}
+
+#information1, #information2, #information3,#information4{
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr;
+	/*padding: 0 10%;*/
+
+}
+
+#information1{
+	grid-area:information1;
+	grid-template-areas: 
+	"I1image" 
+	"I1text";
+}
+
+#information1Text{
+	grid-area:I1text;
+}
+
+#information1Image{
+	grid-area:I1image;
+
+}
+
+#information2{
+	grid-area:information2;
+	grid-template-areas: 
+	"I2image" 
+	"I2text";
+}
+
+#information2Text{
+	grid-area:I2text;
+}
+
+#information2Image{
+	grid-area:I2image;
+
+}
+
+#information3{
+	grid-area:information3;
+	grid-template-areas: 
+	"I3image" 
+	"I3text";
+}
+
+#information3Text{
+	grid-area:I3text;
+}
+
+#information3Image{
+	grid-area:I3image;
+
+}
+
+#information4{
+	grid-area:information4;
+	grid-template-areas: 
+	"I4image" 
+	"I4text";
+}
+
+#information4Text{
+	grid-area:I4text;
+}
+
+#information4Image{
+	grid-area:I4image;
+
+}
+
+#information1Image figure, #information2Image figure, #information3Image figure, #information4Image figure{
+padding:0;
+margin:0;
+height:auto;
+width:100%;
+/*display:flex;
+align-items: center;
+justify-content: center;*/
+}
+
+#information1Image figure > img, #information2Image figure > img, #information3Image figure > img, #information3Image figure > img, #information4Image figure > img{
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-self: center;
+}
+
+#information1Image figure, #information2Image figure, #information3Image figure, #information3Image figure,#information4Image figure{
+display: flex;
+justify-content: center;
+align-content: center;
+}
+
+
+
+#information1Text, #information2Text, #information3Text, #information4Text, 
+#information1Image, #information2Image, #information3Image, #information4Image{
+	display: flex;	
+    align-content: center;
+    justify-content: center;
+    flex-flow: column;
+	padding: 0 5%;
+
+}
+
+#information1Text a, #information2Text a, #information3Text a, #information4Text a{
+	text-decoration: none;
+
+}
+
+#information1Text, #information2Text, #information3Text, #information4Text{
+    /*background-color: #2a2a2a;*/
+    	padding: 0 5%;
+
+}
+
+
+#information1Text p, #information2Text p, #information3Text p, #information4Text p,
+#information1Text h2, #information2Text h2, #information3Text h2, #information4Text h2,
+#information1Text h3, #information2Text h3, #information3Text h3, #information4Text h3{
+	color:#000;
+}
+
+#information1Text h2, #information2Text h2, #information3Text h2, #information4Text h2,
+#information1Text h3, #information2Text h3, #information3Text h3, #information4Text h3{
+text-align: center !important;
+}
+
+@media only screen and (min-width: 1080px){
+main{
+	margin-top: 3%;
+	margin-bottom: 10%;
+	grid-template-rows: 1fr 3fr;
+	grid-row-gap:0;
+
+}
+
+#information1, #information2, #information3, #information4{
+	grid-template-columns: repeat(2,1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 5%;
+}
+
+#information1{
+	grid-template-areas: 
+	"I1text I1image";
+}
+
+#information2{
+	grid-template-areas: 
+	"I2image I2text";
+}
+
+#information3{
+	grid-template-areas: 
+	"I3text I3image";
+}
+
+#information4{
+	grid-template-areas: 
+	"I4image I4text";
+}
+
+#mainPic{
+	height:65vh;
+}
+
+#mainPic figure{
+  width: 75%;
+}
+
+#information1Image figure > img, #information2Image figure > img, #information3Image figure > img, #information3Image figure > img, #information4Image figure > img{
+	width: 50%;
+}
+
+#information1Text h2, #information2Text h2, #information3Text h2, #information4Text h2,
+#information1Text h3, #information2Text h3, #information3Text h3, #information4Text h3{
+text-align: left !important;
+}
+
+}
