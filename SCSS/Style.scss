@@ -540,6 +540,12 @@ main{
         //   text-align: left;
         // }
       }
+      a{
+        &:hover{
+          color:#6c91b8;
+        }
+      }
+
       .work-text{
         width:100%;
         @include for-size(tablet-landscape-up){
@@ -552,6 +558,11 @@ main{
         width:45%;
         }
       }
+    }
+
+    .siteLink{
+      border-left: solid 1px $attentionColor;
+      padding-left:1%;
     }
 
 /*--------------contact-----------------*/
@@ -577,6 +588,13 @@ main{
       padding-top:20px;
       width:100%;
       @include flex(row,space-between,center);
+
+      a{
+        &:hover{
+            background-color:white;
+          }
+        
+      }
       figure{
         width:auto;
         height: 24px;
