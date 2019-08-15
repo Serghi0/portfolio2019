@@ -2,52 +2,42 @@ document.getElementById('menu-button').onclick = function () {
 	// document.getElementsByClassName('hamburgerIcon').style.content="\f12a";
 
 	var menu = document.getElementById('menu'),
+		header = document.getElementById('header'),
+		body = document.getElementsByTagName("BODY")[0],
 		tlMenu = new TimelineMax();
 	if(menu.className == "active"){
 		menu.className = "inactive";
-	  document.getElementById('hamburgerIcon').classList.remove("activeMenu");
+		header.classList.remove("light");
+		header.classList.add("dark");
+	  	document.getElementById('hamburgerIcon').classList.remove("activeMenu");
 		tlMenu
-			.fromTo(menu,0.5, {autoAlpha:1},{autoAlpha:0});
+			.set(body, {className: '-=activeMenu'})
+			.set(body, {className: '+=inactiveMenu'})		
+			.fromTo(menu,0.5, {autoAlpha:1, y:0},{autoAlpha:0,y:-100},-1);
 	} else {
 		menu.className = "active";
+		header.classList.remove("dark");
+		header.classList.add ("light");
 	    document.getElementById('hamburgerIcon').className = "activeMenu";
 
 		tlMenu
-			.fromTo(menu,0.5, {autoAlpha:0},{autoAlpha:1});		
+			.set(body, {className: '-=inactiveMenu'})
+			.set(body, {className: '+=activeMenu'})
+			.fromTo(menu,1, {autoAlpha:0, y:-100},{autoAlpha:1, y:0},-2);		
 	}
 };
 
 
 
 var tl = new TimelineMax(),
-	main = document.getElementsByTagName('main');
+	main = document.getElementsByTagName('main'),
+	welcome = document.getElementById('welcome'),
+	introText = document.getElementById('introText');
+
 
 
 //Timeline
 tl
-	.set(main, {autoAlpha:0, x:1000})
-	.to(main,1.5,{autoAlpha:1, x:0,ease:Back.easeNone});
+	.fromTo(welcome,1,{autoAlpha:0},{autoAlpha:1})
+	.fromTo(introText,1,{autoAlpha:0, y:100},{autoAlpha:1, y:0},1);
 
-
- // next.onclick = function () {
- // tl
- // 	.fromTo(main,2,{autoAlpha:0, x:0}, {autoAlpha:1, x:-2000});	
- // };
-
- // previous.onclick = function () {
- // tl
- // 	.fromTo(main,2,{autoAlpha:0, x:0}, {autoAlpha:1, x:2000});
- // };
-
- // window.onbeforeunload = function(){
- // tl
- // 	.fromTo(main,5,{autoAlpha:0, x:0}, {autoAlpha:1, x:2000});
-
- // };
-
-
-// var hamburgerIcon = document.getElementsByClassName('hamburgerIcon');
-//  document.getElementById('menu-button').onclick = function(){
-//  	console.log("k");
-//  	// document.getElementsByClassName('menu-button:before').style.content="\f12a";
-//  };

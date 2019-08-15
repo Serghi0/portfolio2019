@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
-@font-face {
-    font-family: modern-icons;
-    src: url(Modern-Icons.ttf);
-}
 $headerFont: 'Montserrat', sans-serif;
 $bodyFont: 'Open Sans', sans-serif;
 $primaryColor: #000;
@@ -47,7 +43,7 @@ h1{
     margin-bottom: 0;
     padding: 0;
     @include for-size(phone-only){
-        font-size:28px;
+      @include fontEdit($headerFont,center,28px,bold,normal,3.9,#000);
     }
 }
 
@@ -60,16 +56,25 @@ h2{
 
 h3{
     @include fontEdit($headerFont,left,24px ,normal ,normal,2.9, #000);
+    @include for-size(phone-only){
+      @include fontEdit($headerFont,center,20px ,normal ,normal,2.9, #000);
+    }
 }
 
 h4{
     @include fontEdit($headerFont,left,20px ,normal ,italic,2.0, #000);
-}
+    @include for-size(phone-only){
+      @include fontEdit($headerFont,center,18px ,bold ,normal,2.0, #000);
+    }
+  }
 
 body,
 p,
 a{
     @include fontEdit($bodyFont,left,14px ,normal ,normal,1.6, #000);
+    @include for-size(phone-only){
+      @include fontEdit($bodyFont,center,14px ,normal ,normal,1.6, #000);
+    }
 }
 
 a {

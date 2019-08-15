@@ -9,40 +9,40 @@
   <meta name="author" content="Serghio Liqui Lung"> 
   <link rel="stylesheet" type="text/css" href="CSS/Style.css" />
   <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>	
 </head>
-<body>	  
-  <header data-role ="header" id="header" class='navbar'>
-    <div class='container'>
-      <div class='navbar-header'>
-        <button id='menu-button' class='navbar-btn'type='button'>
-          <span id='hamburgerIcon'></span>
-        </button>
-      </div>
+<body class="inactiveMenu">	  
+  <header data-role ="header" id="header" class='navbar dark'>
+    <div class='navbar-header'>
+      <button id='menu-button' class='navbar-btn'type='button'>
+        <span id='hamburgerIcon'></span>
+      </button>
     </div>
   </header>
   <nav id="menu" class="inactive" >
     <ul>
-      <li><a href="#"><h3 class="home">Home</h3></a></li>
-      <li><a href="Pages/aboutMe.html"><h3 class="aboutMe">About</h3></a></li>      
-      <li><a href="Pages/approach.html"><h3 class="approach">Work</h3></a></li>
-      <li><a href="Pages/project1.html"><h3 class="project">Contact me</h3></a></li>
+      <li><a href="#about-me"><h3 class="aboutLink">About</h3></a></li>      
+      <li><a href="#work"><h3 class="projectsLink">Work</h3></a></li>
+      <li><a href="#contact"><h3 class="contactLink">Contact me</h3></a></li>
     </ul>
   </nav>
 
   <main>
     <section id="hero-image">
-
+        <section class="bg-image"></section>
+        <section class="bg-text">
+          <h1 id="welcome">Bon Bini!</h1>
+          <h3 id="introText">I am Serghio Liqui Lung, a creative and tech-savvy third year student majoring in Communication and Multimedia Design, striving to be a Front-End Developer.</h3>
+        </section>
     </section>
     <section id="about-me">
       <section id="about-me-Title"><h1>About me</h1></section>
-      <section id="about-me-image">
+      <section id="about-me-Image">
           <figure>
               <img src="Images/bio.png" alt="That's me">
             </figure>
       </section>
-      <section id="about-me-text">
+      <section id="about-me-Text">
         <p>
           I am an island guy born on the Dutch 
             Caribbean Island Curaçao and currently living 
@@ -107,9 +107,9 @@
                 </figure>
           </section>
           <section class="work-text">
-            <h3>
+            <h2>
                 PeerCare
-            </h3>
+            </h2>
             <h4>
                 &#34;A product for social good&#34;
             </h4>
@@ -122,7 +122,9 @@
                 needed for the web app. Furthermore, the user will encounter a dashboard 
                 with all their user data on this product when they sign in to their account.
             </p>
-            <a class="readMore">Read more</a>
+            <section class="workLinks">
+              <a href="#" class="readMore">Read more</a>
+            </section>
           </section>
       </section>
       <section id="work-two">
@@ -132,9 +134,9 @@
                 </figure>
           </section>
           <section class="work-text">
-              <h3>
+              <h2>
                   The SpaceX Clock
-              </h3>
+              </h2>
               <h4>
                   &#34;The clock for space tourists&#34;
               </h4>
@@ -151,12 +153,14 @@
                   background color. You can also choose different time-zones to see on the 
                   clock.
               </p>
-              <a class="readMore">
-                Read more
-              </a>
-              <a class="siteLink">
-                Visit the website
-              </a>
+              <section class="workLinks">
+                  <a href="#" class="readMore">
+                      Read more
+                    </a>
+                    <a href="#" class="siteLink">
+                      Visit the website
+                    </a>
+              </section>
             </section>
       </section>
       <section id="work-three">
@@ -166,33 +170,45 @@
               </figure>
         </section>
         <section class="work-text">
-            <h3>
+            <h2>
                 Timeline website  
-            </h3>
+            </h2>
             <h4>
                 &#34;History of Responsive Design&#34;
             </h4>
             <p>
                 For the school subject, IxD & Technology I, the objective was to create a timeline website highlighting the history of responsive design. The tasks were to use CSS flex-boxes to create the layout of the timeline. Furthermore, the website had to be mobile-first developed. The concept of the design was a vertical timeline on the desktop website where the timeline text and images would alternate positions on even- and uneven timeline items. The mobile website also has a vertical timeline design, but the timeline text and images don’t alternate.
             </p>
-            <a class="readMore">
-              Read more
-            </a>
-            <a class="siteLink">
-              Visit the website
-            </a>
-          </section>
+            <section class="workLinks">
+                <a href="#" class="readMore">
+                    Read more
+                  </a>
+                  <a href="#" class="siteLink">
+                    Visit the website
+                  </a>
+            </section>
       </section>
+    </section>
     </section>
     <section id="contact">
       <section id="contact-text">
         <h2 id="contactQuestion">Work together with me?</h2>
         <h3>Just drop a message via one of these options</h3>
       </section>
-      <section id="contact-icons"></section>
+      <section id="contact-icons">
+        <a href="#">
+          <figure><img src="Images/Facebook.svg" alt="Facebook"></figure>
+        </a>
+        <a href="#"> 
+            <figure><img src="Images/LinkedInSquare.svg" alt="LinkedIn"></figure>
+        </a>
+        <a href="#">
+            <figure><img src="Images/Mail.svg" alt="Email"></figure>
+        </a>
+      </section>
     </section>
   </main>  
 </body>
-<!-- <script src="JS/TweenMax.min.js"></script>
-<script src="JS/Main.js"></script> -->
+<script src="JS/TweenMax.min.js"></script>
+<script src="JS/Main.js"></script>
 </html>

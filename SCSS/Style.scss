@@ -1,16 +1,5 @@
 @import 'Fontstyle';
 
-html,
-body,
-ul,
-ol {
-  margin:  0;
-  padding: 0;
-}
-
-html{
-  height:100%;
-}
 @mixin grid($rows,$columns){
   display:grid;
   grid-template-rows: $rows;
@@ -33,25 +22,266 @@ $sectionColor: #fff;
 $sectionAltColor: #F5F5F5;
 $attentionColor: #9DC1EA;
 
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+
+html{
+  height:100%;
+}
+
+@mixin activeMenuLayout($active:true) {
+  @if $active{
+    grid-template-areas:
+    "header"
+    "nav"
+    "main";
+  }@else{
+    grid-template-areas:
+    "header"
+    "main";
+  }
+}
+
 body{
-  @include grid(1fr ,10fr);
-  grid-template-areas:
-  "header"
-  "main";
-// @extend %heightWidth;
-background-color: $sectionColor;
+  @include grid(auto,1fr);
+  background-color: #000;
+}
+
+.activeMenu{
+  @include activeMenuLayout($active:true);
+}
+
+.inactiveMenu{
+  @include activeMenuLayout($active:false);
+}
+
+/*-----------header------------*/
+
+@mixin headerColor($active:true){
+  @if $active{
+    background-color: #f5f5f5;
+    color:#000;
+  }@else{
+    background-color: #000;
+    color:#fff;  
+  }
 }
 
 #header{
   grid-area:header;
-  background-color: $heroImageColor;
-  @extend %paddingContent;
+  margin-left:auto;
+  margin-right:auto;
 
 }
 
+.dark{
+  @include headerColor($active:false);
+}
+
+.light{
+  @include headerColor($active:true);
+
+}
+.navbar{
+  width:100%;
+  height:50px;
+  z-index:999;
+  top: 0;
+
+
+
+    .navbar-btn:focus,
+    .navbar-btn:hover,
+    .navbar-btn:active, 
+    .navbar-btn {
+      color: transparent; 
+      text-decoration: none; 
+      background-color: transparent;
+      border-color: transparent;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      padding:0;
+      margin:0; 
+    }
+
+    #hamburgerIcon {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font: normal normal normal 24px/48px Ionicons;
+      color:#fff;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+      &.activeMenu:before{
+        @include headerColor($active:true);
+        content: "\f2d7";
+        &:hover{
+          color: #99BADD;
+        }
+      }
+  
+      &:before {
+        @include headerColor($active:false);
+        content: "\f394";
+      }
+  
+      &:hover {
+        color: #99BADD;
+      }
+  
+    }
+
+    
+    .navbar-header{
+      @extend %paddingContent;
+      @include flex(row,flex-end , center);
+      height:100%;
+      widows: 100%;;
+    }
+
+    #menu-button{
+      grid-area:menu;
+      display: flex;
+      justify-content: flex-start; /* align horizontal */
+      align-items: center; /* align vertical */
+      color: #FFF;
+
+      @include for-size(tablet-portrait-up){
+        display: none;
+      }
+    }
+
+    &:focus,
+    &:active{
+      outline:0;
+    }
+
+}
+
+/*-----------navigation----------*/
+
+.active {
+  height:100%;
+  @include for-size(tablet-portrait-up){
+  padding-top:0;
+  }
+}
+
+.inactive {
+  visibility: hidden;
+  height:0;
+}
+
+/*
+  Nav styles
+*/
+
+nav {
+  padding-top: 2%;
+  height: 100%;
+  // z-index:999;
+ 
+  width:100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  padding: 0;
+  margin: 0;
+
+  @include for-size(tablet-portrait-up){
+    width:100%;
+    margin-top: 0;
+    display: flex;
+    flex-flow: row;
+    overflow:hidden;
+    padding-top:0;
+    align-items: center;
+    left:0;
+  }
+
+  ul{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    @include for-size(tablet-portrait-up){
+      display: flex;
+      flex-flow: row;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0;
+    }
+
+    li{
+      display: inline-block;
+      margin: 0;
+      list-style: none;
+      text-align:left;
+
+      @include for-size(tablet-portrait-up){
+        display: flex;
+        padding: 0.25em;
+        margin: 0;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        border: none;
+      }
+
+      &:hover{
+        background-color: $attentionColor;
+      }
+
+      a{
+        color: #f5f5f5;
+        text-decoration: none;
+        font-weight: bold;
+        line-height: 26px;
+        letter-spacing: .34px;
+
+        h3{
+          padding: 1em;
+          font-size:12px;
+          &:hover{
+            background-color: $attentionColor;
+            color:#000;
+          }
+          @include for-size(tablet-portrait-up){
+            font-size:16px !important;
+            padding: 0.25em;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+#menu {
+  background-color: #f5f5f5;
+
+  a{
+    color:#fff;
+
+  }
+}
+
+/*----------------main---------------*/
+
 main{
   grid-area:main;
-  @include grid(2fr 2fr 2fr 5fr 1fr, 1fr);
+  @include grid(auto, 1fr);
   grid-template-areas:
   "hero-image"
   "about-me"
@@ -60,27 +290,98 @@ main{
   "contact";
   // @extend %heightWidth;
 
-
+/*----------hero-image-----------*/
   #hero-image{
     grid-area: hero-image;
-    background-color: $heroImageColor;
+    // background-color: $heroImageColor;
     height:100vh;
+    @include grid(1fr,1fr);
+    .bg-text{
+      grid-row:1;
+      grid-column: 1;
+      @include flex(column,flex-start ,center );
+      align-self: center;
+      justify-self:center;
+      z-index: 2;
+      width: 100%;
+      height:100%;
+      h1{
+        text-align: center;
+        background: url("../Images/curacao.jpg") no-repeat;
+        font-size: 70px;
+        background-position: center top;
+        background-size: 600px;
+        background-attachment: fixed;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        @include for-size(tablet-portrait-up){
+          font-size: 200px !important;
+          background-size: 60% 60%;};
+      }
+      h3{
+        @extend %paddingContent;
+        text-align: center;
+        color:$sectionColor;
+        font-weight: 700;
+      } 
+    }
+    .bg-image{
+      grid-row:1;
+      grid-column: 1;  
+      width: 100%;
+      height: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color:$heroImageColor;}
+      
   }
+
+/*-----------about me---------------*/
 
   #about-me{
+    background-color: $sectionColor;
     grid-area:about-me;
     @extend %paddingContent;
+    @include grid(1fr 2fr 3fr, 1fr);
+    grid-template-areas: 
+    "aMTitle"
+    "aMPicture"
+    "aMText";
+    
+    #about-me-Title{
+      grid-area:aMTitle;
+      @include flex(column,center ,center );
 
+    }
+    #about-me-Image{
+      grid-area: aMPicture;
+      @include flex(column,center ,center );
+      figure{
+        height:100%;
+        img{
+          height:100%;
+        }
+      };
+    }
+    #about-me-Text{
+      grid-area:aMText;
+      @include flex(column,center ,center );
+    }
   }
+
+/*---------skills---------------*/
 
   #skills{
     grid-area:skills;
     background-color: $sectionAltColor;
     @extend %paddingContent;
+    @include flex(column,center ,center );
 
     figure{
       img{
-        width:50%;
+        width:100%;
         height: auto;
       }
     }
@@ -94,22 +395,31 @@ main{
     }
   }
 
+/*--------------work--------------*/
+
   #work{
     grid-area:work;
-    @include grid(1fr repeat(3,3fr), 1fr);
+    @include grid(1fr repeat(3,5fr), 1fr);
     grid-template-areas:
     "work-title"
     "work-one"
     "work-two"
     "work-three";
+  }
 
+  %workLayout{
+    @include flex(column,center ,center);
+    @include for-size(tablet-portrait-up){
+      @include flex(row,center ,center);
+    }
+    padding-top:40px;
+    padding-bottom:40px;
   }
 
     #work-title{
-
+      @include flex(row,center ,center );
       background-color: $attentionColor;
-      @extend %paddingContent;
-
+      padding: 0 20px;
 
     }
 
@@ -117,13 +427,17 @@ main{
 
       background-color: $sectionColor;
       @extend %paddingContent;
-
+      @extend %workLayout;
     }
 
     #work-two{
 
       background-color: $sectionAltColor;
       @extend %paddingContent;
+      @extend %workLayout;
+      @include for-size(tablet-portrait-up){
+        @include flex(row-reverse,center ,center);
+      }
 
     }
 
@@ -131,17 +445,50 @@ main{
 
       background-color: $sectionColor;
       @extend %paddingContent;
+      @extend %workLayout;
 
     }
+
+    #work-one, #work-two, #work-three{
+      .workLinks{
+        justify-self: center;
+        text-align: center;
+      }
+      h3,h4,p{
+        text-align: center;
+        
+        @include for-size(tablet-portrait-up){
+          text-align: left;
+        }
+      }
+    }
+
+/*--------------contact-----------------*/
 
   #contact{
     grid-area:contact;
     @include flex(column,center ,center);
     background-color: $attentionColor;
     @extend %paddingContent;
+    padding-bottom: 20px;
 
+    h3{
+      font-weight: 700;
+      font-size:18px;
+    }
+
+    #contact-icons{
+      width:100%;
+      @include flex(row,space-between,center);
+      figure{
+        width:auto;
+        height: 24px;
+      }
+    }
   }
 }
+
+/*-----------misc--------------*/
 
 figure{
   @include flex(column,center ,center );
@@ -151,6 +498,7 @@ figure{
   width:100%;
   img{
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 }
+
