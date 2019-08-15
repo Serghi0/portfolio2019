@@ -15,7 +15,7 @@ $breakpoints: (phone:375px, tablet:768px, smallDesktop:1280px, bigDesktop:1366px
     } @else if $size == desktop-up {
       @media (min-width: 1280px) { @content; }
     } @else if $size == big-desktop-up {
-      @media (min-width: 1366x) { @content; }
+      @media (min-width: 1366px) { @content; }
     }
   }
 @mixin fontEdit($fFamily,$align, $fSize, $fWeight, $fStyle, $lineHeight, $fontColor){
@@ -52,6 +52,10 @@ h2{
     @include for-size(phone-only){
       @include fontEdit($headerFont,center,24px ,bold ,normal,3.4, #000);
     }
+    @include for-size(tablet-portrait-up){
+      @include fontEdit($headerFont,center,28px ,bold ,normal,3.4, #000);
+
+    }
 }
 
 h3{
@@ -59,12 +63,20 @@ h3{
     @include for-size(phone-only){
       @include fontEdit($headerFont,center,20px ,normal ,normal,2.9, #000);
     }
+    @include for-size(tablet-portrait-up){
+      @include fontEdit($headerFont,center,24px ,normal ,normal,2.9, #000);
+
+    }
 }
 
 h4{
     @include fontEdit($headerFont,left,20px ,normal ,italic,2.0, #000);
     @include for-size(phone-only){
       @include fontEdit($headerFont,center,18px ,bold ,normal,2.0, #000);
+    }
+    @include for-size(tablet-portrait-up){
+      @include fontEdit($headerFont,center,20px ,normal ,italic,2.0, #000);
+
     }
   }
 

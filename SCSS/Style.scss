@@ -15,6 +15,15 @@
 
 %paddingContent{
 padding: 0px 36.5px;
+@include for-size(tablet-portrait-up){
+  padding: 0px 80px;
+}
+@include for-size(tablet-landscape-up){
+  padding: 0px 138px;
+}
+@include for-size(big-desktop-up){
+  padding: 0px 139px;
+}
 }
 
 $heroImageColor: #000;
@@ -44,12 +53,18 @@ html{
     grid-template-areas:
     "header"
     "main";
+    @include for-size(tablet-portrait-up){
+      grid-template-areas:
+      "nav"
+      "main";
+    }
   }
 }
 
 body{
   @include grid(auto,1fr);
   background-color: #000;
+
 }
 
 .activeMenu{
@@ -76,7 +91,9 @@ body{
   grid-area:header;
   margin-left:auto;
   margin-right:auto;
-
+  @include for-size(tablet-portrait-up){
+    display: none;
+  }
 }
 
 .dark{
@@ -207,18 +224,21 @@ nav {
   }
 
   ul{
+    @extend %paddingContent;
     display: flex;
     flex-flow: column;
     width: 100%;
-    padding: 0;
     margin: 0;
+    
+    @include for-size(phone-only){
+      padding:0;
+    }
 
     @include for-size(tablet-portrait-up){
-      display: flex;
       flex-flow: row;
-      justify-content: space-around;
+      justify-content: flex-end;
       align-items: center;
-      padding: 0;
+      // padding: 0;
     }
 
     li{
@@ -238,7 +258,7 @@ nav {
       }
 
       &:hover{
-        background-color: $attentionColor;
+        // background-color: $attentionColor;
       }
 
       a{
@@ -252,10 +272,13 @@ nav {
           padding: 1em;
           font-size:12px;
           &:hover{
-            background-color: $attentionColor;
-            color:#000;
+            // background-color: ;
+            // color:#000;
+            border-bottom: $attentionColor 1px solid;
+
           }
           @include for-size(tablet-portrait-up){
+            color: #fff;
             font-size:16px !important;
             padding: 0.25em;
 
@@ -270,12 +293,27 @@ nav {
 
 #menu {
   background-color: #f5f5f5;
+  @include for-size(tablet-portrait-up){
+    background-color: #000;
+
+  }
 
   a{
     color:#fff;
 
   }
 }
+
+.contactLink{
+  @include for-size(tablet-portrait-up){
+  background-color: $attentionColor;
+  // border-bottom-right-radius: 30px;
+  &:hover{
+    background-color: #fff;
+    color: #000;
+  }
+}
+  }
 
 /*----------------main---------------*/
 
@@ -295,6 +333,9 @@ main{
     grid-area: hero-image;
     // background-color: $heroImageColor;
     height:100vh;
+    @include for-size(desktop-up){
+      height:80vh;
+    }
     @include grid(1fr,1fr);
     .bg-text{
       grid-row:1;
@@ -316,8 +357,12 @@ main{
         -webkit-background-clip: text;
         background-clip: text;
         @include for-size(tablet-portrait-up){
-          font-size: 200px !important;
-          background-size: 60% 60%;};
+          font-size: 120px;
+          background-size: 100% 100%;};
+        @include for-size(tablet-landscape-up){
+          font-size: 150px;
+          line-height: 2.0;
+          }
       }
       h3{
         @extend %paddingContent;
@@ -341,6 +386,8 @@ main{
 /*-----------about me---------------*/
 
   #about-me{
+    padding-top:20px;
+    padding-bottom: 20px;
     background-color: $sectionColor;
     grid-area:about-me;
     @extend %paddingContent;
@@ -350,6 +397,15 @@ main{
     "aMPicture"
     "aMText";
     
+    @include for-size(tablet-portrait-up){
+      @include grid(1fr 2fr, 1fr 1fr);
+      grid-column-gap: 5%;
+      grid-template-areas: 
+      "aMPicture aMTitle"
+      "aMPicture aMText";    
+    }
+
+
     #about-me-Title{
       grid-area:aMTitle;
       @include flex(column,center ,center );
@@ -358,8 +414,9 @@ main{
     #about-me-Image{
       grid-area: aMPicture;
       @include flex(column,center ,center );
+      align-self: center;
       figure{
-        height:100%;
+        height:auto;
         img{
           height:100%;
         }
@@ -374,10 +431,28 @@ main{
 /*---------skills---------------*/
 
   #skills{
+    padding-top:20px;
+    padding-bottom: 20px;
     grid-area:skills;
     background-color: $sectionAltColor;
     @extend %paddingContent;
     @include flex(column,center ,center );
+
+    .skillContainer{
+      width:100%;
+      @include flex(column,space-between ,center );
+
+      @include for-size(tablet-portrait-up){
+      @include flex(row,space-between ,center );
+      }
+
+      #wireframe,
+      #design,
+      #development{
+        @include flex(column,center ,center );
+      }
+
+    }
 
     figure{
       img{
@@ -409,8 +484,8 @@ main{
 
   %workLayout{
     @include flex(column,center ,center);
-    @include for-size(tablet-portrait-up){
-      @include flex(row,center ,center);
+    @include for-size(tablet-landscape-up){
+      @include flex(row,space-between,center);
     }
     padding-top:40px;
     padding-bottom:40px;
@@ -435,8 +510,8 @@ main{
       background-color: $sectionAltColor;
       @extend %paddingContent;
       @extend %workLayout;
-      @include for-size(tablet-portrait-up){
-        @include flex(row-reverse,center ,center);
+      @include for-size(tablet-landscape-up){
+        @include flex(row-reverse,space-between ,center);
       }
 
     }
@@ -453,12 +528,28 @@ main{
       .workLinks{
         justify-self: center;
         text-align: center;
+
+        // @include for-size(tablet-landscape-up){
+        //   text-align: left;
+        // }
       }
-      h3,h4,p{
+      p,a{
         text-align: center;
         
-        @include for-size(tablet-portrait-up){
-          text-align: left;
+        // @include for-size(tablet-portrait-up){
+        //   text-align: left;
+        // }
+      }
+      .work-text{
+        width:100%;
+        @include for-size(tablet-landscape-up){
+          width:45%;
+        }
+      }
+      .work-image{
+        width:100%;
+        @include for-size(tablet-landscape-up){
+        width:45%;
         }
       }
     }
@@ -471,18 +562,27 @@ main{
     background-color: $attentionColor;
     @extend %paddingContent;
     padding-bottom: 20px;
+    padding-top: 20px;
 
+    h2{
+      line-height: 2.5;
+    }
     h3{
       font-weight: 700;
       font-size:18px;
+      line-height: 2.0;
     }
 
     #contact-icons{
+      padding-top:20px;
       width:100%;
       @include flex(row,space-between,center);
       figure{
         width:auto;
         height: 24px;
+      }
+      @include for-size(tablet-portrait-up){
+        width:50%;
       }
     }
   }
