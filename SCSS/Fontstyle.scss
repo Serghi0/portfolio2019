@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
+@font-face {
+    font-family: modern-icons;
+    src: url(Modern-Icons.ttf);
+}
+$headerFont: 'Montserrat', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
+$primaryColor: #000;
+$secundaryColor: #fff;
+$linkColor: #9DC1EA;
+$breakpoints: (phone:375px, tablet:768px, smallDesktop:1280px, bigDesktop:1366px);
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 767px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 768px) { @content; }
+    } @else if $size == tablet-landscape-up {
+      @media (min-width: 1024px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1280px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1366x) { @content; }
+    }
+  }
+@mixin fontEdit($fFamily,$align, $fSize, $fWeight, $fStyle, $lineHeight, $fontColor){
+    font-family: $fFamily;
+    text-align:$align;
+    font-size:$fSize;
+    font-weight:$fWeight;
+    font-style:$fStyle;
+    line-height: $lineHeight;
+    color:$fontColor;
+
+}
+
+h1,
+h2,
+h3,
+h4{
+    margin-top:0;
+    margin-bottom: 0;
+}
+
+h1{
+    @include fontEdit($headerFont,left,32px,bold,normal,3.9,#000);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    @include for-size(phone-only){
+        font-size:28px;
+    }
+}
+
+h2{
+    @include fontEdit($headerFont,left,28px ,bold ,normal,3.4, #000);
+    @include for-size(phone-only){
+      @include fontEdit($headerFont,center,24px ,bold ,normal,3.4, #000);
+    }
+}
+
+h3{
+    @include fontEdit($headerFont,left,24px ,normal ,normal,2.9, #000);
+}
+
+h4{
+    @include fontEdit($headerFont,left,20px ,normal ,italic,2.0, #000);
+}
+
+body,
+p,
+a{
+    @include fontEdit($bodyFont,left,14px ,normal ,normal,1.6, #000);
+}
+
+a {
+    text-decoration: none;
+    color:$linkColor;
+}
+
+

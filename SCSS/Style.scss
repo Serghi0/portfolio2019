@@ -1,0 +1,156 @@
+@import 'Fontstyle';
+
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+
+html{
+  height:100%;
+}
+@mixin grid($rows,$columns){
+  display:grid;
+  grid-template-rows: $rows;
+  grid-template-columns: $columns;
+}
+
+@mixin flex($flow, $justify, $align){
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $justify; /* align horizontal */
+  align-items: $align; /* align vertical */
+}
+
+%paddingContent{
+padding: 0px 36.5px;
+}
+
+$heroImageColor: #000;
+$sectionColor: #fff;
+$sectionAltColor: #F5F5F5;
+$attentionColor: #9DC1EA;
+
+body{
+  @include grid(1fr ,10fr);
+  grid-template-areas:
+  "header"
+  "main";
+// @extend %heightWidth;
+background-color: $sectionColor;
+}
+
+#header{
+  grid-area:header;
+  background-color: $heroImageColor;
+  @extend %paddingContent;
+
+}
+
+main{
+  grid-area:main;
+  @include grid(2fr 2fr 2fr 5fr 1fr, 1fr);
+  grid-template-areas:
+  "hero-image"
+  "about-me"
+  "skills"
+  "work"
+  "contact";
+  // @extend %heightWidth;
+
+
+  #hero-image{
+    grid-area: hero-image;
+    background-color: $heroImageColor;
+    height:100vh;
+  }
+
+  #about-me{
+    grid-area:about-me;
+    @extend %paddingContent;
+
+  }
+
+  #skills{
+    grid-area:skills;
+    background-color: $sectionAltColor;
+    @extend %paddingContent;
+
+    figure{
+      img{
+        width:50%;
+        height: auto;
+      }
+    }
+    .skillText{
+      h3{
+        text-align: center;
+      }
+      p{
+        text-align: center;
+      }
+    }
+  }
+
+  #work{
+    grid-area:work;
+    @include grid(1fr repeat(3,3fr), 1fr);
+    grid-template-areas:
+    "work-title"
+    "work-one"
+    "work-two"
+    "work-three";
+
+  }
+
+    #work-title{
+
+      background-color: $attentionColor;
+      @extend %paddingContent;
+
+
+    }
+
+    #work-one{
+
+      background-color: $sectionColor;
+      @extend %paddingContent;
+
+    }
+
+    #work-two{
+
+      background-color: $sectionAltColor;
+      @extend %paddingContent;
+
+    }
+
+    #work-three{
+
+      background-color: $sectionColor;
+      @extend %paddingContent;
+
+    }
+
+  #contact{
+    grid-area:contact;
+    @include flex(column,center ,center);
+    background-color: $attentionColor;
+    @extend %paddingContent;
+
+  }
+}
+
+figure{
+  @include flex(column,center ,center );
+  padding:0;
+  margin:0;
+  height:auto;
+  width:100%;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}

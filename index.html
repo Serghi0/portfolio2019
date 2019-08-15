@@ -8,111 +8,191 @@
   <meta name="description" content="Portfolio" />
   <meta name="author" content="Serghio Liqui Lung"> 
   <link rel="stylesheet" type="text/css" href="CSS/Style.css" />
-  <link rel="stylesheet" type="text/css" href="CSS/indexLayout.css" />
-
   <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  
- 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-
-	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>	
 </head>
-
-<body>
-		
-	
-	  
- <header data-role ="header" id="header" class='navbar'>
-  <div class='container'>
-    <div class='navbar-header'>
-      <a id="name" class='navbar-brand' href='index.html'><h3>Serghio Liqui Lung</h3></a>
-      <button id='menu-button' class='navbar-btn'type='button'>
-        <span id='hamburgerIcon'></span>
-      </button>
-      <div id="pagename"><h3>Home</h3></div>
+<body>	  
+  <header data-role ="header" id="header" class='navbar'>
+    <div class='container'>
+      <div class='navbar-header'>
+        <button id='menu-button' class='navbar-btn'type='button'>
+          <span id='hamburgerIcon'></span>
+        </button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
   <nav id="menu" class="inactive" >
     <ul>
       <li><a href="#"><h3 class="home">Home</h3></a></li>
-      <li><a href="Pages/aboutMe.html"><h3 class="aboutMe">About me</h3></a></li>      
-      <li><a href="Pages/approach.html"><h3 class="approach">Approach</h3></a></li>
-      <li><a href="Pages/project1.html"><h3 class="project">Project 1: The SpaceX Clock</h3></a></li>
-      <li><a href="Pages/project2.html"><h3 class="project">Project 2: History of Responsive Design</h3></a></li>
-      <li><a href="Pages/project3.html"><h3 class="project">Project 3: PeerCare</h3></a></li>
+      <li><a href="Pages/aboutMe.html"><h3 class="aboutMe">About</h3></a></li>      
+      <li><a href="Pages/approach.html"><h3 class="approach">Work</h3></a></li>
+      <li><a href="Pages/project1.html"><h3 class="project">Contact me</h3></a></li>
     </ul>
   </nav>
 
-<main class="frontpageLayout">
-  <div id="mainPic">
-    <div class="bg-image"></div>
-    <div class="bg-text homepage">
-      <h1>Bon Bini!</h1>
-      <h3>I am Serghio Liqui Lung, a creative and tech-savvy third year student majoring in Communication and Multimedia Design, striving to be a Front-End Developer.</h3>
-    </div>
-  </div>
-  <section>
-    <div id = "projectTitle">
-      <h1>Here are some projects I've worked on</h1>
-    </div>
-    <div id="information1">
-      <div id="information1Image" class="frontPage">
-        <figure>
-          <img src="Images/FrontPagePic.svg" alt="PeerCare">
-        </figure>
-      </div>
-      <div id="information1Text" class="frontPage frontPageText">
-        <h2>PeerCare</h2>
+  <main>
+    <section id="hero-image">
+
+    </section>
+    <section id="about-me">
+      <section id="about-me-Title"><h1>About me</h1></section>
+      <section id="about-me-image">
+          <figure>
+              <img src="Images/bio.png" alt="That's me">
+            </figure>
+      </section>
+      <section id="about-me-text">
         <p>
-          For this project the goal was to create a product that would help informal caregivers take care of their elders when they are not able to due to them living a long distance from their elders. The products that were developed were a mobile application and a web application.
+          I am an island guy born on the Dutch 
+            Caribbean Island Curaçao and currently living 
+            in The Netherlands. I was brought up with a 
+            lot of creativity in the house, whether it was 
+            drawing, digital art or music. I started 
+            designing and developing websites as a hobby 
+            since I was 15 years old.
         </p>
-        <div class="case_link"><a href="Pages/project3.html">Follow this link to see this project.</a></div>
-      </div>
-    </div>
-    <div id="information2">
-      <div id="information2Image" class="frontPage frontPageText">
-        <figure>
-          <img src="Images/macbookPhoneTimeline.svg" alt="History of Responsive Design">
-        </figure>
-      </div>
-      <div id="information2Text" class="frontPage frontPageText">
-        <h2>History of Responsive Design</h2>
         <p>
-          An other project I worked on had me creating a mobile-first responsive website detailing the history of responsive design while utilizing CSS flex-box.
+            Front-end developing is a continuous cycle of 
+            learning where patterns that might have been 
+            popular a week ago could all of a sudden be 
+            out of fashion. That’s why my goal is to 
+            continue developing my skills in designing and 
+            developing on the front-end.
         </p>
-        <div class="case_link"><a href="Pages/project2.html">Follow this link to see this project.</a></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-
-
-<footer data-role="footer" id="footer">
-  <div id="contactDetails">
-  <a href="https://www.linkedin.com/in/serghio-liqui-lung-71b6b412a/"><span class='linkedInIcon'></span></a>
-  <a href="mailto:Serghio.L@hotmail.com" id="emailIcon"><span class='emailIcon'></span><div id="emailText">&#124; Serghio.L(at)hotmail.com</div></a>
-</div>
-</footer>
-    
-  
-<div class="pagination-container">
-  <a href="Pages/project3.html" id="previous"></a>
-  <div class="pagination">
-  <a href="#" class="activePage"></a>
-  <a href="Pages/aboutMe.html"></a>
-  <a href="Pages/approach.html"></a>
-  <a href="Pages/project1.html"></a>
-  <a href="Pages/project2.html"></a>
-  <a href="Pages/project3.html"></a>
-  </div>
-  <a href="Pages/aboutMe.html" id="next"></a>
-</div>
-  
-
-  
+      </section>
+    </section>
+    <section id="skills">
+      <section id="skills-Title"><h2>What are my skills?</h2></section>
+      <section id="wireframe">
+        <section class="skillImage">
+            <figure>
+                <img src="Images/Wireframes.svg" alt="Wireframes">
+              </figure>
+        </section>
+        <section class="skillText">
+          <h3>Wireframe</h3>
+          <p>Adobe XD</p>
+        </section>
+      </section>
+      <section id="design">
+          <section class="skillImage">
+              <figure>
+                  <img src="Images/Design.svg" alt="Design">
+                </figure>
+          </section>
+          <section class="skillText">
+            <h3>Design</h3>
+            <p>Adobe Photoshop, Illustrator, XD</p>
+          </section>
+      </section>
+      <section id="development">
+          <section class="skillImage">
+              <figure>
+                  <img src="Images/Development.svg" alt="Development">
+                </figure>
+          </section>
+          <section class="skillText">
+            <h3>Development</h3>
+            <p>HTML, CSS, JavaScript, SASS</p>
+          </section>
+      </section>
+    </section>
+    <section id="work">
+      <section id="work-title"><h2>Some cases I've worked on</h2></section>
+      <section id="work-one">
+          <section class="work-image">
+              <figure>
+                  <img src="Images/macbookPeerCare.svg" alt="PeerCare">
+                </figure>
+          </section>
+          <section class="work-text">
+            <h3>
+                PeerCare
+            </h3>
+            <h4>
+                &#34;A product for social good&#34;
+            </h4>
+            <p>
+                For the school subject, European Project Semester, the objective was to 
+                create a product for social good. The product had to help informal caregivers 
+                help take care of their elders. For this product a mobile app and a web app 
+                had to be created. The web app is created with the informal caregiver in 
+                mind while the mobile app is intended for the elder. A landing page was 
+                needed for the web app. Furthermore, the user will encounter a dashboard 
+                with all their user data on this product when they sign in to their account.
+            </p>
+            <a class="readMore">Read more</a>
+          </section>
+      </section>
+      <section id="work-two">
+          <section class="work-image">
+              <figure>
+                  <img src="Images/macbookSpaceX.svg" alt="Space X Clock">
+                </figure>
+          </section>
+          <section class="work-text">
+              <h3>
+                  The SpaceX Clock
+              </h3>
+              <h4>
+                  &#34;The clock for space tourists&#34;
+              </h4>
+              <p>
+                  For the school subject, IxD & Technology II, the objective was to create a 
+                  website for passengers on a SpaceX spacecraft where they could see the time 
+                  on earth wherever they are. The tasks were to indicate on the screen if it was 
+                  day time or night time and to show the time in one or more time zones. The 
+                  target was also to use the TweenMax library to create animations on the 
+                  website. The concept of the design was a rocket flying from earth to mars 
+                  where the “space” would indicate what time of the day it is. It will be dark 
+                  when it’s at night, it will be sky blue if it is day time and it would be orange if it 
+                  is dusk or dawn. Furthermore, the time of the clock determines the 
+                  background color. You can also choose different time-zones to see on the 
+                  clock.
+              </p>
+              <a class="readMore">
+                Read more
+              </a>
+              <a class="siteLink">
+                Visit the website
+              </a>
+            </section>
+      </section>
+      <section id="work-three">
+        <section class="work-image">
+            <figure>
+                <img src="Images/macbookPhoneTimeline.svg" alt="History of Responsive Design">
+              </figure>
+        </section>
+        <section class="work-text">
+            <h3>
+                Timeline website  
+            </h3>
+            <h4>
+                &#34;History of Responsive Design&#34;
+            </h4>
+            <p>
+                For the school subject, IxD & Technology I, the objective was to create a timeline website highlighting the history of responsive design. The tasks were to use CSS flex-boxes to create the layout of the timeline. Furthermore, the website had to be mobile-first developed. The concept of the design was a vertical timeline on the desktop website where the timeline text and images would alternate positions on even- and uneven timeline items. The mobile website also has a vertical timeline design, but the timeline text and images don’t alternate.
+            </p>
+            <a class="readMore">
+              Read more
+            </a>
+            <a class="siteLink">
+              Visit the website
+            </a>
+          </section>
+      </section>
+    </section>
+    <section id="contact">
+      <section id="contact-text">
+        <h2 id="contactQuestion">Work together with me?</h2>
+        <h3>Just drop a message via one of these options</h3>
+      </section>
+      <section id="contact-icons"></section>
+    </section>
+  </main>  
 </body>
-<script src="JS/TweenMax.min.js"></script>
-<script src="JS/Main.js"></script>
+<!-- <script src="JS/TweenMax.min.js"></script>
+<script src="JS/Main.js"></script> -->
 </html>
