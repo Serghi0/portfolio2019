@@ -299,7 +299,7 @@ main{
     .bg-text{
       grid-row:1;
       grid-column: 1;
-      @include flex(column,flex-start ,center );
+      @include flex(column,center ,center );
       align-self: center;
       justify-self:center;
       z-index: 2;
@@ -310,7 +310,7 @@ main{
         background: url("../Images/curacao.jpg") no-repeat;
         font-size: 70px;
         background-position: center top;
-        background-size: 600px;
+        background-size: 600px 600px;
         background-attachment: fixed;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
