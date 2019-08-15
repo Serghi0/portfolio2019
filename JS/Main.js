@@ -8,14 +8,16 @@ function checkMenu(){
 }
 
 var tl = new TimelineMax(),
+	body = document.getElementsByTagName("BODY")[0],
 	main = document.getElementsByTagName('main'),
 	welcome = document.getElementById('welcome'),
 	introText = document.getElementById('introText');
 
 //Timeline
 tl
+	.fromTo(body,1,{autoAlpha:0},{autoAlpha:1})
 	.fromTo(welcome,5,{autoAlpha:0},{autoAlpha:1})
-	.fromTo(introText,1,{autoAlpha:0, y:100},{autoAlpha:1, y:0},1);
+	.fromTo(introText,1,{autoAlpha:0, y:100},{autoAlpha:1, y:0},2);
 
 	document.getElementsByTagName("BODY")[0].onload = function(){checkMenu()};
 	document.getElementsByTagName("BODY")[0].onresize = function(){checkMenu()};
@@ -49,3 +51,14 @@ tl
 		}
 	};
 	
+	// $(function(){
+	// 	$("#bioPic").on({
+	// 	 mouseenter: function(){
+	// 	  $(this).attr('src','Images/bio.jpeg');
+	// 	},
+	// 	mouseleave: function(){
+	// 	  $(this).attr('src','Images/bio.png');
+	// 	}
+	// 	});
+		
+	//   });
