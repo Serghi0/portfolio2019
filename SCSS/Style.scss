@@ -459,8 +459,8 @@ main{
     .skillImage{
       height:110px;
       width:140px;
-        background-position: center;
-        background-size: 110px 140px;
+        // background-position: center;
+        // background-size: 110px 140px;
       // figure{
       //   height:110px;
       //   width:140px;
@@ -470,17 +470,17 @@ main{
       //     height: 100%;
       //   }
       }
-      .Wireframes{
-        background: url("../Images/Wireframes.svg") no-repeat;
-      }
-      .Design{
-        background: url("../Images/Design.svg?sanitize=true") no-repeat;
+      // .Wireframes{
+      //   background: url("../Images/Wireframes.svg") no-repeat;
+      // }
+      // .Design{
+      //   background: url("../Images/Design.svg?sanitize=true") no-repeat;
 
-      }
-      .Development{
-        background: url("../Images/Development.svg?sanitize=true") no-repeat;
+      // }
+      // .Development{
+      //   background: url("../Images/Development.svg?sanitize=true") no-repeat;
 
-      }
+      // }
   
     .skillText{
       h3{
