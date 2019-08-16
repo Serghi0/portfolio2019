@@ -457,19 +457,20 @@ main{
 
     }
     .skillImage{
-      height:110px;
+      height:140px;
       width:140px;
         // background-position: center;
         // background-size: 110px 140px;
-      // figure{
-      //   height:110px;
-      //   width:140px;
-      //   @include flex(row,center ,center );
-      //   img{
-      //     width:100%;
-      //     height: 100%;
-      //   }
+      figure{
+        height:100%;
+        width:100%;
+        @include flex(row,center ,center );
+        img{
+          // width:100%;
+          // height: 100%;
+        }
       }
+    }
       // .Wireframes{
       //   background: url("../Images/Wireframes.svg") no-repeat;
       // }
