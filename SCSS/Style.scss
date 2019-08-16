@@ -456,16 +456,32 @@ main{
       }
 
     }
-
-    figure{
+    .skillImage{
       height:110px;
       width:140px;
-      @include flex(row,center ,center );
-      img{
-        width:100%;
-        height: 100%;
+        background-position: center;
+        background-size: 110px 140px;
+      // figure{
+      //   height:110px;
+      //   width:140px;
+      //   @include flex(row,center ,center );
+      //   img{
+      //     width:100%;
+      //     height: 100%;
+      //   }
       }
-    }
+      .Wireframes{
+        background: url("../Images/Wireframes.svg") no-repeat;
+      }
+      .Design{
+        background: url("../Images/Design.svg") no-repeat;
+
+      }
+      .Development{
+        background: url("../Images/Development.svg") no-repeat;
+
+      }
+  
     .skillText{
       h3{
         text-align: center;
