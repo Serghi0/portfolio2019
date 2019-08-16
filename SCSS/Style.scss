@@ -474,11 +474,11 @@ main{
         background: url("../Images/Wireframes.svg") no-repeat;
       }
       .Design{
-        background: url("../Images/Design.svg") no-repeat;
+        background: url("../Images/Design.svg?sanitize=true") no-repeat;
 
       }
       .Development{
-        background: url("../Images/Development.svg") no-repeat;
+        background: url("../Images/Development.svg?sanitize=true") no-repeat;
 
       }
   
