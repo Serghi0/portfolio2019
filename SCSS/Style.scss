@@ -446,7 +446,7 @@ main{
       @include flex(column,space-between ,center );
 
       @include for-size(tablet-portrait-up){
-      @include flex(row,space-between ,center );
+      @include flex(row,space-between ,flex-end );
       }
 
       #wireframe,
@@ -458,9 +458,12 @@ main{
     }
 
     figure{
+      height:110px;
+      width:140px;
+      @include flex(row,center ,center );
       img{
         width:100%;
-        height: auto;
+        height: 100%;
       }
     }
     .skillText{
