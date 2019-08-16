@@ -333,6 +333,9 @@ main{
     grid-area: hero-image;
     // background-color: $heroImageColor;
     height:100vh;
+    @include for-size(small-phone){
+      height:100%;
+    }    
     @include for-size(desktop-up){
       height:80vh;
     }
@@ -543,6 +546,12 @@ main{
       a{
         &:hover{
           color:#6c91b8;
+        }
+        &:visited{
+          color:#cff4ff;
+          &:hover{
+            color:#6c91b8;
+          }
         }
       }
 

@@ -3,19 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no"> 
-  <title>Serghio - Front End Developer</title>
+  <title>Serghio - Front End Developer - Project 2 - SpaceX Clock</title>
   <meta name="title" content="Serghio - Front End Developer" />
   <meta name="description" content="Portfolio" />
   <meta name="author" content="Serghio Liqui Lung"> 
-  <link rel="stylesheet" type="text/css" href="../CSS/Style.css" />
-  <link rel="stylesheet" type="text/css" href="../CSS/layoutMain.css" />
-
+  <link rel="stylesheet" type="text/css" href="../CSS/ProjectStyle.css" />
   <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  
- 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-
-	
 </head>
 
 <body>
@@ -25,114 +20,68 @@
  <header data-role ="header" id="header" class='navbar'>
   <div class='container'>
     <div class='navbar-header'>
-      <a id="name" class='navbar-brand' href='../index.html'><h3>Serghio Liqui Lung</h3></a>
       <button id='menu-button' class='navbar-btn'type='button'>
-        <span id='hamburgerIcon'></span>
+        <span id='hamburgerIcon'><a href="../index.html"><h2>Return</h2></a></span>
       </button>
-      <div id="pagename"><h3>Project 2: History of Responsive Design
-</h3></div>
     </div>
   </div>
 </header>
-  <nav id="menu" class="inactive" >
-    <ul>
-      <li><a href="../index.html"><h3 class="home">Home</h3></a></li>
-      <li><a href="aboutMe.html"><h3 class="aboutMe">About me</h3></a></li>            
-      <li><a href="approach.html"><h3 class="approach">Approach</h3></a></li>
-      <li><a href="project1.html"><h3 class="project">Project 1: The SpaceX Clock</h3></a></li>
-      <li><a href="#"><h3 class="project">Project 2: History of Responsive Design
-</h3></a></li>
-      <li><a href="project3.html"><h3 class="project">Project 3: PeerCare</h3></a></li>
-    </ul>
-  </nav>
 
 <main>
-  <div id="mainPic">
-    <div class="bg-image bg2"></div>
-    <div class="bg-text">
-      <h1>Project 2:</h1>
-      <h2>History of Responsive Design</h2>
-    </div>
-  </div>
-  <section>
-    <div id="information1">
-      <div id="information1Image">
-        <figure id="">
-          <img src="../Images/timelineAnimated.gif" alt="Responsive Design Timeline">
+    <section id="work-title">
+        <section class="bg-image"></section>
+        <section class="bg-text">
+          <h1 id="welcome">Project 2:</h1>
+          <h2 id="introText">The SpaceX Clock</h2>
+        </section>
+    </section>
+    <section id="work-one">
+      <section class="work-image">
+        <figure>
+          <img src="../Images/macbookSpaceX.svg" alt="frontpagePic">
         </figure>
-      </div>
-      <div id="information1Text">
-        <h2>Project Description</h2>
+      </section>
+      <section class="work-text">
+          <h2>Project Description</h2>
         <p>
-          For the school subject, IxD &amp; Technology I, the objective was to create a timeline website highlighting the history of responsive design. The tasks were to use CSS flexboxes to create the layout of the timeline. Furthermore, the website had to be mobile-first developed.
-          The concept of the design was a vertical timeline on the desktop website where the timeline text and images would alternate positions on even- and uneven timeline items. The mobile website also has a vertical timeline design, but the timeline text and images don't alternate.
-        </p>
-        <p>
-          This was a solo project where I worked solely on the designs and front-end development of the website. I had to do research beforehand on responsive design and the historical facts of responsive design. I also had to do research on how to apply CSS flexbox to the website. 
-        </p>
-      </div>
-    </div>
-    <div id="information2">
-      <div id="information2Image">
-        <figure id="">
-          <img src="../Images/timelineCode.gif" alt="Timeline Code">
+              For the school subject, IxD &amp; Technology II, the objective was to create a website for passengers on a SpaceX spacecraft where they could see the time on earth wherever they are. The tasks were to indicate on the screen if it was day time or night time and to show the time in one or more time zones. The target was also to use the TweenMax library to create animations on the website.
+              The concept of the design was a rocket flying from earth to mars where the "space" would indicate what time of the day it is. It will be dark when it's at night, it will be sky blue if it is day time and it would be orange if it is dusk or dawn. Furthermore, the time of the clock determines the background color. You can also choose different time-zones to see on the clock.
+            </p>
+            <p>
+              This was a solo project where I worked solely on the designs and front-end development of the website. I had to do research beforehand on the different time-zones differences and how to apply them to code. I also had to do research on how to apply the TweenMax library to the website. 
+            </p>
+      </section>
+    </section>
+    <section id="work-two">
+      <section class="work-image">
+        <figure>
+            <img src="../Images/spaceXClockCode.gif" alt="code for the website">
         </figure>      
-      </div>
-      <div id="information2Text">
+      </section>
+      <section class="work-text">
         <h2>Design and front-end development of the website</h2>
         <p>
-           This website's designs were created using Lo-Fi prototypes where sketches were made to visualize how the page would look and which elements needed to be added. Furthermore, Hi-Fi prototypes were created to visualize the animations and interactions of the website.
-          For the development, HTML was used to apply the content to the website. Additionally, CSS was applied to the website to create the layout of the website. The layout was created mobile first where media queries were used. The layout was created using CSS Flexbox. Furthermore, JavaScript was used to alternate the background images to the item on the screen.
-        </p>
-      </div>
-    </div>
-    <div id="information3">
-      <div id="information3Image">
-        <figure id="">
-          <img src="../Images/macbookPhoneTimeline.svg" alt="responsive design">
-
+            This website's designs were created using Lo-Fi prototypes where sketches were made to visualize how the page would look and which elements needed to be added. Furthermore, Hi-Fi prototypes were created to visualize the animations and interactions of the website.
+           For the development, HTML was used to apply the content to the website. Additionally, CSS was applied to the website to create the layout of the website. The layout was created mobile first where media queries were used. The layout was created using CSS grid layout and CSS Flexbox. Furthermore, the TweenMax library was used to create the animations in JavaScript. The clock operations were also created in JavaScript.
+         </p>
+      </section>
+    </section>
+    <section id="work-three">
+      <section class="work-image">
+        <figure>
+            <img src="../Images/clockSite.gif" alt="animation of the website">
         </figure>      
-      </div>
-      <div id="information3Text">
+      </section>
+      <section class="work-text">
         <h2>Highlighted elements</h2>
         <p>
-          What I'm most proud of this project, is the mobile-first responsive design. The implementation of the media queries made it possible to make the website unique for each device. I had no experience with applying mobile-first responsive design, so this was a huge accomplishment. Furthermore, I can apply these codes to new and old projects to make them responsive. 
-          I am also proud of the CSS flexbox implementation. This made it easy to place the timeline items on the timeline.
-        </p>
-        <p>You can visit this website <a href="https://serghi0.github.io/Timeline_ixd1/" target="_blank" class="hotlink">here</a>.</p>
-      </div>    
-    </div>
-  </section>
-
-
-</main>
-
-
-
-<footer data-role="footer" id="footer">
-  <div id="contactDetails">
-  <a href="https://www.linkedin.com/in/serghio-liqui-lung-71b6b412a/"><span class='linkedInIcon'></span></a>
-  <a href="mailto:Serghio.L@hotmail.com" id="emailIcon"><span class='emailIcon'></span><div id="emailText">&#124; Serghio.L(at)hotmail.com</div></a>
-</div>
-</footer>
-    
-  
-<div class="pagination-container">
-  <a href="project1.html" id="previous"></a>
-  <div class="pagination">
-  <a href="../index.html"></a>
-  <a href="aboutMe.html"></a>  
-  <a href="approach.html"></a>
-  <a href="project1.html"></a>
-  <a href="project2.html" class="activePage"></a>
-  <a href="project3.html"></a>
-  </div>
-  <a href="project3.html" id="next"></a>
-</div>
-  
-
-  
+            What I'm most proud of this project, is the TweenMax animations that has been applied to the website. The animations were applied to different elements. Furthermore, the animations play in the chosen order to highlight to the user that they are "on a journey to mars". I am proud of this achievement because learning how to apply the TweenMax library took some time to learn. Furthermore, the animations really bring life to the website. I am also proud of the clock that I created for the website. I was able to apply different time-zones to the clock so that people from different parts of the world could use this website. I had to use JavaScripts techniques which I normally have no experience with, and I applied these successfully. Now I can adept these codes for future projects, which I am happy for.
+          </p>
+          <p>You can visit the website <a href="https://serghi0.github.io/F-XT-IXD_-_TechnologyII-Challenge_II/" target="_blank" class="hotlink">here</a>.</p>
+ 
+      </section>    
+    </section>
+</main> 
 </body>
-<script src="../JS/TweenMax.min.js"></script>
-<script src="../JS/Main.js"></script>
 </html>
+  

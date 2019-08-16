@@ -1,0 +1,315 @@
+@import 'Fontstyle';
+
+@mixin grid($rows,$columns){
+  display:grid;
+  grid-template-rows: $rows;
+  grid-template-columns: $columns;
+}
+
+@mixin flex($flow, $justify, $align){
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $justify; /* align horizontal */
+  align-items: $align; /* align vertical */
+}
+
+%paddingContent{
+padding: 0px 36.5px;
+@include for-size(tablet-portrait-up){
+  padding: 0px 80px;
+}
+@include for-size(tablet-landscape-up){
+  padding: 0px 138px;
+}
+@include for-size(big-desktop-up){
+  padding: 0px 139px;
+}
+}
+
+$heroImageColor: #000;
+$sectionColor: #fff;
+$sectionAltColor: #F5F5F5;
+$attentionColor: #9DC1EA;
+
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+
+html{
+  height:100%;
+}
+
+body{
+    @include grid(auto,1fr);
+    background-color: #000;
+    grid-template-areas:
+    "header"
+    "main";
+  
+  }
+
+  /*-----------header------------*/
+  
+  #header{
+    grid-area:header;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #000;
+    color:#fff;  
+    padding-top:20px;
+  }
+
+  .navbar{
+    width:100%;
+    height:50px;
+    z-index:999;
+    top: 0;
+  
+  
+  
+      .navbar-btn:focus,
+      .navbar-btn:hover,
+      .navbar-btn:active, 
+      .navbar-btn {
+        color: transparent; 
+        text-decoration: none; 
+        background-color: transparent;
+        border-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding:0;
+        margin:0; 
+      }
+  
+      #hamburgerIcon {
+        position: relative;
+        top: 1px;
+        // display: inline-block;
+        @include flex(row,center ,center );
+        font: normal normal normal 24px/48px Ionicons;
+        color:#fff;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    
+        &:before {
+          content: "\f2ca";
+        }
+    
+        &:hover {
+          color: #99BADD;
+        }
+    
+        h2{
+            padding-left:5%;
+            color:white;
+            &:hover {
+                color: #99BADD;
+              }
+        }
+      }
+  
+      
+      .navbar-header{
+        @extend %paddingContent;
+        @include flex(row,flex-start , center);
+        height:100%;
+        widows: 100%;;
+      }
+  
+      #menu-button{
+        grid-area:menu;
+        display: flex;
+        justify-content: flex-start; /* align horizontal */
+        align-items: center; /* align vertical */
+        color: #FFF;
+  
+        // @include for-size(tablet-portrait-up){
+        //   display: none;
+        // }
+      }
+  
+      &:focus,
+      &:active{
+        outline:0;
+      }
+  
+  }
+
+  /*----------------main---------------*/
+
+main{
+    grid-area:main;
+    @include grid(auto, 1fr);
+    grid-template-areas:
+    "work-title"
+    "work-one"
+    "work-two"
+    "work-three";
+  }
+
+  %workLayout{
+    @include flex(column,center ,center);
+    @include for-size(tablet-landscape-up){
+      @include flex(row,space-between,center);
+    }
+    padding-top:40px;
+    padding-bottom:40px;
+  }
+
+#work-title{
+    grid-area: work-title;
+    padding: 0 20px;
+    height:95vh;
+    @include for-size(small-phone){
+      height:100%;
+    }    
+    @include for-size(desktop-up){
+      height:30vw;
+    }
+
+    @include grid(1fr,1fr);
+
+
+    .bg-text{
+        grid-row:1;
+        grid-column: 1;
+        @include flex(column,center ,center );
+        align-self: center;
+        justify-self:center;
+        z-index: 2;
+        width: 100%;
+        height:100%;
+        h1{
+          text-align: center;
+          color: $sectionColor;
+        //   background: url("../Images/PeerCare_1440.png") no-repeat;
+        //   font-size: 70px;
+        //   background-position: center top;
+        //   background-size: 600px 600px;
+        //   background-attachment: fixed;
+        //   -webkit-text-fill-color: transparent;
+        //   -webkit-background-clip: text;
+        //   background-clip: text;
+          @include for-size(tablet-portrait-up){
+            font-size: 120px;
+            background-size: 100% 100%;};
+          @include for-size(tablet-landscape-up){
+            font-size: 150px;
+            line-height: 2.0;
+            }
+        }
+        h2{
+          @extend %paddingContent;
+          text-align: center;
+          color:$sectionColor;
+          font-weight: 700;
+        } 
+      }
+      .bg-image{
+        grid-row:1;
+        grid-column: 1;  
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color:$heroImageColor;}
+        
+
+}
+
+ 
+
+    
+
+    #work-one{
+
+      background-color: $sectionColor;
+      @extend %paddingContent;
+      @extend %workLayout;
+    }
+
+    #work-two{
+
+      background-color: $sectionAltColor;
+      @extend %paddingContent;
+      @extend %workLayout;
+      @include for-size(tablet-landscape-up){
+        @include flex(row-reverse,space-between ,center);
+      }
+
+    }
+
+    #work-three{
+
+      background-color: $sectionColor;
+      @extend %paddingContent;
+      @extend %workLayout;
+
+    }
+
+    #work-one, #work-two, #work-three{
+      .workLinks{
+        justify-self: center;
+        text-align: center;
+
+        // @include for-size(tablet-landscape-up){
+        //   text-align: left;
+        // }
+      }
+      p,a{
+        text-align: center;
+        
+        // @include for-size(tablet-portrait-up){
+        //   text-align: left;
+        // }
+      }
+      a{
+        &:hover{
+          color:#6c91b8;
+        }
+        &:visited{
+          color:#cff4ff;
+          &:hover{
+            color:#6c91b8;
+          }
+        }
+      }
+
+      h2{
+        padding-top:20px;
+        line-height: 1.5;
+      }
+
+      .work-text{
+        width:100%;
+        @include for-size(tablet-landscape-up){
+          width:45%;
+        }
+      }
+      .work-image{
+        width:100%;
+        @include for-size(tablet-landscape-up){
+        width:45%;
+        }
+      }
+    }
+
+    /*-----------misc--------------*/
+
+figure{
+    @include flex(column,center ,center );
+    padding:0;
+    margin:0;
+    height:auto;
+    width:100%;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
