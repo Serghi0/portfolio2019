@@ -15,6 +15,10 @@
 
 %paddingContent{
 padding: 0px 36.5px;
+
+@include for-size(small-phone){
+  padding: 0px 15px;
+}
 @include for-size(tablet-portrait-up){
   padding: 0px 80px;
 }
@@ -306,6 +310,8 @@ nav {
 
 .contactLink{
   @include for-size(tablet-portrait-up){
+    padding: 0 15px;
+    border-radius:4px;
   background-color: $attentionColor;
   // border-bottom-right-radius: 30px;
   &:hover{

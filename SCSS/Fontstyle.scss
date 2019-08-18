@@ -4,7 +4,7 @@ $bodyFont: 'Open Sans', sans-serif;
 $primaryColor: #000;
 $secundaryColor: #fff;
 $linkColor: #9DC1EA;
-$breakpoints: (phone:375px, tablet:768px, smallDesktop:1280px, bigDesktop:1366px);
+// $breakpoints: (phone:375px, tablet:768px, smallDesktop:1280px, bigDesktop:1366px);
 @mixin for-size($size) {
     @if $size == phone-only {
       @media (max-width: 767px) { @content; }
@@ -41,8 +41,6 @@ h4{
 
 h1{
     @include fontEdit($headerFont,left,32px,bold,normal,3.9,#000);
-    margin-top: 0;
-    margin-bottom: 0;
     padding: 0;
     @include for-size(phone-only){
       @include fontEdit($headerFont,center,28px,bold,normal,3.9,#000);
