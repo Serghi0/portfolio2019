@@ -400,14 +400,14 @@ main{
     background-color: $sectionColor;
     grid-area:about-me;
     @extend %paddingContent;
-    @include grid(1fr 2fr 3fr, 1fr);
+    @include grid(auto, 1fr);
     grid-template-areas: 
     "aMTitle"
     "aMPicture"
     "aMText";
     
     @include for-size(tablet-portrait-up){
-      @include grid(1fr 2fr, 1fr 1fr);
+      @include grid(auto, auto);
       grid-column-gap: 5%;
       grid-template-areas: 
       "aMPicture aMTitle"
@@ -426,8 +426,18 @@ main{
       align-self: center;
       figure{
         height:auto;
-        img{
-          height:100%;
+        picture{
+          @include flex(column,center ,center );
+          img{
+            justify-self: center;
+            align-self: center;
+            // width: 100%;
+            @include for-size(tablet-portrait-up){
+              // width: 100%;
+            }
+
+            height:auto;
+          }
         }
       };
     }
