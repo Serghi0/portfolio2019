@@ -290,18 +290,23 @@ nav {
         h3{
           padding: 1em;
           font-size:12px;
-          &:hover{
-            // background-color: ;
-            color:$attentionColor;
-            border-bottom: $attentionColor 1px solid;
-            // text-decoration: underline;
+          font-weight: 600;
+          // &:hover{
+          //   // background-color: ;
+          //   color:$attentionColor;
+          //   border-bottom: $attentionColor 1px solid;
+          //   // text-decoration: underline;
 
-          }
+          // }
           @include for-size(tablet-portrait-up){
             color: #fff;
             font-size:16px !important;
             padding: 0.25em;
-
+            border-bottom: #000 1px solid;
+            &:hover{
+              color:$linkColor;
+              border-bottom: $linkColor 1px solid;
+            }
           }
         }
       }
@@ -329,12 +334,12 @@ nav {
     // margin-left:20px;
     padding: 0 15px;
     border-radius:4px;
-  background-color: $linkColor;
-  color:#000;
+  background-color: $attentionColor;
+  color:#fff;
   // border-bottom-right-radius: 30px;
   &:hover{
     border:none;
-    background-color: #fff;
+    background-color: $linkColor;
     color: #000;
     // text-decoration: none;
   }
@@ -596,9 +601,10 @@ main{
       p,a{
         text-align: center;
         
-        // @include for-size(tablet-portrait-up){
-        //   text-align: left;
-        // }
+        @include for-size(tablet-portrait-up){
+          text-align: justify;
+          text-justify: inter-word;
+        }
       }
 
 
@@ -633,10 +639,12 @@ main{
     
 
     h2{
+      text-align: center;
       color:#fff;
       line-height: 2.5;
     }
     h3{
+      text-align: center;
       color:#fff;
       font-weight: 700;
       font-size:18px;

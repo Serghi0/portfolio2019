@@ -265,9 +265,10 @@ main{
       p,a{
         text-align: center;
         
-        // @include for-size(tablet-portrait-up){
-        //   text-align: left;
-        // }
+        @include for-size(tablet-portrait-up){
+          text-align: justify;
+          text-justify: inter-word;
+        }
       }
       a{
         &:hover{

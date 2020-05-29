@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
 $headerFont: 'Montserrat', sans-serif;
 $bodyFont: 'Open Sans',Helvetica, Arial, sans-serif; 
 $primaryColor: #000;
@@ -41,28 +42,28 @@ h4{
 }
 
 h1{
-    @include fontEdit($headerFont,left,32px,bold,normal,3.9,#000);
+    @include fontEdit($headerFont,left,32px,800,normal,3.9,#000);
     padding: 0;
     @include for-size(phone-only){
-      @include fontEdit($headerFont,center,28px,bold,normal,3.9,#000);
+      @include fontEdit($headerFont,center,28px,600,normal,3.9,#000);
     }
 }
 
 h2{
-    @include fontEdit($headerFont,left,28px ,bold ,normal,3.4, #000);
+    @include fontEdit($headerFont,left,28px ,bold ,normal,3, #000);
     @include for-size(phone-only){
-      @include fontEdit($headerFont,center,24px ,bold ,normal,3.4, #000);
+      @include fontEdit($headerFont,center,24px ,600 ,normal,3, #000);
     }
-    @include for-size(tablet-portrait-up){
-      @include fontEdit($headerFont,center,28px ,bold ,normal,3.4, #000);
+    // @include for-size(tablet-portrait-up){
+    //   @include fontEdit($headerFont,center,28px ,bold ,normal,3.4, #000);
 
-    }
+    // }
 }
 
 h3{
-    @include fontEdit($headerFont,left,24px ,normal ,normal,2.9, #000);
+    @include fontEdit($headerFont,left,24px ,normal ,600,2.9, #000);
     @include for-size(phone-only){
-      @include fontEdit($headerFont,center,20px ,normal ,normal,2.9, #000);
+      @include fontEdit($headerFont,center,20px ,normal ,600,2.9, #000);
     }
     @include for-size(tablet-portrait-up){
       @include fontEdit($headerFont,center,24px ,normal ,normal,2.9, #000);
@@ -75,18 +76,20 @@ h4{
     @include for-size(phone-only){
       @include fontEdit($headerFont,center,18px ,bold ,normal,2.0, #000);
     }
-    @include for-size(tablet-portrait-up){
-      @include fontEdit($headerFont,center,20px ,normal ,italic,2.0, #000);
+    // @include for-size(tablet-portrait-up){
+    //   @include fontEdit($headerFont,center,20px ,normal ,italic,2.0, #000);
 
-    }
+    // }
   }
 
 body,
 p,
 a{
-    @include fontEdit($bodyFont,left,14px ,normal ,normal,1.6, #000);
+  text-align: justify;
+  text-justify: inter-word;
+    @include fontEdit($bodyFont,left,14px ,normal ,normal,2, #000);
     @include for-size(phone-only){
-      @include fontEdit($bodyFont,center,16px ,normal ,normal,1.6, #000);
+      @include fontEdit($bodyFont,center,16px ,normal ,normal,2, #000);
     }
 }
 
