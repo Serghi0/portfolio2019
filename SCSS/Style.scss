@@ -32,8 +32,18 @@ padding: 0px 36.5px;
 
 $heroImageColor: #000;
 $sectionColor: #fff;
-$sectionAltColor: #F5F5F5;
-$attentionColor: #9DC1EA;
+$sectionAltColor: #D8E6E9;
+$attentionColor: #3B6068;
+
+html {
+	box-sizing: border-box;
+}
+
+*, 
+*:before,
+*:after{
+	box-sizing: inherit;
+}
 
 html,
 body,
@@ -172,7 +182,7 @@ body{
       display: flex;
       justify-content: flex-start; /* align horizontal */
       align-items: center; /* align vertical */
-      color: #FFF;
+      color: #000;
 
       @include for-size(tablet-portrait-up){
         display: none;
@@ -189,7 +199,7 @@ body{
 /*-----------navigation----------*/
 
 .active {
-  height:100%;
+  // height:100%;
   @include for-size(tablet-portrait-up){
   padding-top:0;
   }
@@ -205,8 +215,8 @@ body{
 */
 
 nav {
-  padding-top: 2%;
-  height: 100%;
+ 
+  // height: 100%;
   // z-index:999;
  
   width:100%;
@@ -217,6 +227,8 @@ nav {
   margin: 0;
 
   @include for-size(tablet-portrait-up){
+    position: fixed;
+    z-index: 9999;
     width:100%;
     margin-top: 0;
     display: flex;
@@ -239,6 +251,8 @@ nav {
     }
 
     @include for-size(tablet-portrait-up){
+      padding-top: 0.5%;
+      padding-bottom: 0.5%;
       flex-flow: row;
       justify-content: flex-end;
       align-items: center;
@@ -266,6 +280,7 @@ nav {
       // }
 
       a{
+        margin-left:20px;
         color: #f5f5f5;
         text-decoration: none;
         font-weight: bold;
@@ -277,8 +292,9 @@ nav {
           font-size:12px;
           &:hover{
             // background-color: ;
-            // color:#000;
+            color:$attentionColor;
             border-bottom: $attentionColor 1px solid;
+            // text-decoration: underline;
 
           }
           @include for-size(tablet-portrait-up){
@@ -310,13 +326,17 @@ nav {
 
 .contactLink{
   @include for-size(tablet-portrait-up){
+    // margin-left:20px;
     padding: 0 15px;
     border-radius:4px;
-  background-color: $attentionColor;
+  background-color: $linkColor;
+  color:#000;
   // border-bottom-right-radius: 30px;
   &:hover{
+    border:none;
     background-color: #fff;
     color: #000;
+    // text-decoration: none;
   }
 }
   }
@@ -453,7 +473,7 @@ main{
     padding-top:20px;
     padding-bottom: 20px;
     grid-area:skills;
-    background-color: $sectionAltColor;
+    background-color: $sectionColor;
     @extend %paddingContent;
     @include flex(column,center ,center );
 
@@ -534,6 +554,7 @@ main{
       @include flex(row,center ,center );
       background-color: $attentionColor;
       padding: 0 20px;
+      h2{color:#fff;}
 
     }
 
@@ -579,17 +600,7 @@ main{
         //   text-align: left;
         // }
       }
-      a{
-        &:hover{
-          color:#6c91b8;
-        }
-        &:visited{
-          color:#cff4ff;
-          &:hover{
-            color:#6c91b8;
-          }
-        }
-      }
+
 
       .work-text{
         width:100%;
@@ -619,11 +630,14 @@ main{
     @extend %paddingContent;
     padding-bottom: 20px;
     padding-top: 20px;
+    
 
     h2{
+      color:#fff;
       line-height: 2.5;
     }
     h3{
+      color:#fff;
       font-weight: 700;
       font-size:18px;
       line-height: 2.0;
@@ -635,17 +649,17 @@ main{
       @include flex(row,space-between,center);
 
       a{
+        color:#fff;
         &:hover{
-            background-color:white;
+            color:$linkColor;
           }
         
       }
-      figure{
-        width:auto;
-        height: 24px;
+      ion-icon{
+        font-size: 24px;
       }
       @include for-size(tablet-portrait-up){
-        width:50%;
+        width:20%;
       }
     }
   }

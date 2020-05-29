@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
 $headerFont: 'Montserrat', sans-serif;
-$bodyFont: 'Open Sans', sans-serif; 
+$bodyFont: 'Open Sans',Helvetica, Arial, sans-serif; 
 $primaryColor: #000;
 $secundaryColor: #fff;
-$linkColor: #9DC1EA;
+$linkColor: #EE6457;
+$hoverLinkColor: #f9c48A;
 // $breakpoints: (phone:375px, tablet:768px, smallDesktop:1280px, bigDesktop:1366px);
 @mixin for-size($size) {
     @if $size == phone-only {
@@ -85,13 +86,24 @@ p,
 a{
     @include fontEdit($bodyFont,left,14px ,normal ,normal,1.6, #000);
     @include for-size(phone-only){
-      @include fontEdit($bodyFont,center,14px ,normal ,normal,1.6, #000);
+      @include fontEdit($bodyFont,center,16px ,normal ,normal,1.6, #000);
     }
 }
 
 a {
     text-decoration: none;
     color:$linkColor;
+    &:hover{
+      color:$hoverLinkColor;
+    }
+    &:visited{
+      color:$linkColor;
+      &:hover{
+        color:$hoverLinkColor;
+      }
+    }
 }
+
+
 
 

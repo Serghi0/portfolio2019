@@ -28,8 +28,8 @@ padding: 0px 36.5px;
 
 $heroImageColor: #000;
 $sectionColor: #fff;
-$sectionAltColor: #F5F5F5;
-$attentionColor: #9DC1EA;
+$sectionAltColor: #97bec6;
+$attentionColor: #034c5f;
 
 html,
 body,
@@ -101,14 +101,14 @@ body{
         }
     
         &:hover {
-          color: #99BADD;
+          color: $linkColor;
         }
     
         h2{
             padding-left:5%;
             color:white;
             &:hover {
-                color: #99BADD;
+                color: $linkColor;
               }
         }
       }
