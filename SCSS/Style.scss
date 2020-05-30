@@ -351,6 +351,8 @@ nav {
 main{
   grid-area:main;
   @include grid(auto, 1fr);
+  // row-gap: 50px;
+  background-color:$sectionColor;
   grid-template-areas:
   "hero-image"
   "about-me"
@@ -420,8 +422,8 @@ main{
 /*-----------about me---------------*/
 
   #about-me{
-    padding-top:20px;
-    padding-bottom: 20px;
+    padding-top:50px;
+    padding-bottom: 50px;
     background-color: $sectionColor;
     grid-area:about-me;
     @extend %paddingContent;
@@ -478,8 +480,8 @@ main{
 /*---------skills---------------*/
 
   #skills{
-    padding-top:20px;
-    padding-bottom: 20px;
+    padding-top:50px;
+    padding-bottom: 50px;
     grid-area:skills;
     background-color: $sectionColor;
     @extend %paddingContent;
@@ -542,6 +544,7 @@ main{
   #work{
     grid-area:work;
     @include grid(1fr repeat(3,5fr), 1fr);
+    // row-gap:50px;
     grid-template-areas:
     "work-title"
     "work-one"
@@ -554,8 +557,8 @@ main{
     @include for-size(tablet-landscape-up){
       @include flex(row,space-between,center);
     }
-    padding-top:40px;
-    padding-bottom:40px;
+    padding-top:50px;
+    padding-bottom:50px;
   }
 
     #work-title{

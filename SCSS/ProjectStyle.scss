@@ -61,6 +61,8 @@ body{
     background-color: #000;
     color:#fff;  
     padding-top:20px;
+    @include for-size(tablet-portrait-up){padding-top:0px;}
+
   }
 
   .navbar{
