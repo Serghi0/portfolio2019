@@ -675,12 +675,12 @@ main{
 
     form{
       grid-area:form;
-      // padding:50px;
       @include for-size(phone-only){
-        // padding:0;
         align-self:center;
         margin-top:1em;
         margin-bottom:1em;
+        @include flex(column,center ,center );
+
       }
 
       max-width: 90%;
@@ -700,7 +700,10 @@ main{
     p{
       font-family: $bodyFont;
       // min-width:90%;
-      margin-bottom:0.5em;
+      margin-bottom:1em;
+      @include for-size(phone-only){
+        margin-bottom:1.5em;
+      }
       // color:#fff;
 
       @include for-size(small-phone){
@@ -722,7 +725,7 @@ main{
     font-family: $headerFont;
     color: #fff;
     max-width: 100%;
-    padding: 0.75em;
+    padding: 1em;
     box-sizing: border-box;
     cursor: text;
     border: 2px dashed rgba(255, 255, 255, 0);
@@ -839,11 +842,14 @@ main{
       line-height: 2.5;
     }
     h3{
-      text-align: left;
+      text-align: center;
       color:#fff;
       font-weight: 700;
       font-size:18px;
       line-height: 2.0;
+      @include for-size(tablet-portrait-up){
+        text-align: left;
+      }
     }
     p{
       // min-width:100%;
@@ -864,12 +870,13 @@ main{
       display: flex;
       flex-flow: column;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: center;
       // border-top: 1px solid #dfdfdf;
       @include for-size(tablet-portrait-up){
         padding-left:2.5em;
         align-self: flex-start;
         border-left: 1px solid #dfdfdf;
+        align-items: flex-start;
       }
 
 
