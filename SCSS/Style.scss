@@ -19,6 +19,11 @@ padding: 0px 36.5px;
 @include for-size(small-phone){
   padding: 0px 15px;
 }
+
+@include for-size(phone-only){
+  padding: 0px 40px;
+}
+
 @include for-size(tablet-portrait-up){
   padding: 0px 80px;
 }
@@ -373,7 +378,7 @@ main{
     grid-area: hero-image;
     // background-color: $heroImageColor;
     height:100vh;
-    @include for-size(small-phone){
+@include for-size(phone-only){
       height:100%;
     }    
     @include for-size(desktop-up){
@@ -655,38 +660,302 @@ main{
     padding-top: 20px;
     
 
+
+
+    #contactTypes{
+      width:100%;
+      display: flex;
+      flex-flow:column;
+      @include for-size(tablet-portrait-up){
+        @include grid(auto,auto );
+        grid-template-areas: "form socials";
+        column-gap:1em;
+      }
+    }
+
+    form{
+      grid-area:form;
+      // padding:50px;
+      @include for-size(phone-only){
+        // padding:0;
+        align-self:center;
+        margin-top:1em;
+        margin-bottom:1em;
+      }
+
+      max-width: 90%;
+      align-self:flex-start;
+      width:100%;
+      @include for-size(small-phone){
+        align-self:center;
+      }
+      @include for-size(phone-only){
+        align-self:center;
+      }
+    
+      label {
+        cursor: text;
+    }
+
+    p{
+      font-family: $bodyFont;
+      // min-width:90%;
+      margin-bottom:0.5em;
+      // color:#fff;
+
+      @include for-size(small-phone){
+        text-align:center;
+      }
+      @include for-size(phone-only){
+        text-align:center;
+      }
+    }
+    
+    textarea,
+    input {
+    outline: none;
+    border-radius: 0;
+    text-align: center;
+    background: none;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: $headerFont;
+    color: #fff;
+    max-width: 100%;
+    padding: 0.75em;
+    box-sizing: border-box;
+    cursor: text;
+    border: 2px dashed rgba(255, 255, 255, 0);
+
+
+
+    }
+
+
+    textarea {
+      text-align: left;
+      resize: none;
+      width: 100%;
+      border-color: rgba(255, 255, 255, 0);
+    }
+
+    textarea:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px dashed rgba(255, 255, 255, 1);
+    }
+
+    textarea:focus:required:valid {
+      border: 2px solid rgba(255, 255, 255, 0);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    textarea:required:valid,
+    input:required:valid {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+
+    input,
+    input:required,
+    textarea:required {
+      border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+    }
+
+    input:focus {
+      border-bottom: 2px dashed rgba(255, 255, 255, 1);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    input:required:invalid {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    ::placeholder{
+      font-style:italic;
+      text-align: center;
+      color: #fff;
+      opacity: 1;
+      font-weight: 600;
+      
+    }
+
+    ::-webkit-input-placeholder {
+      font-style:italic;
+      text-align: center;
+      color: #fff;
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    :-moz-placeholder {
+      font-style:italic;
+      text-align: center;
+      color: #fff;
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    ::-moz-placeholder{
+      font-style:italic;
+      text-align: center;
+      color: #fff;
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    :-ms-input-placeholder {
+      font-style:italic;
+      text-align: center;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    button{
+      background:none;
+      border:none;
+      outline:none;
+      margin:1em;
+      // margin:1vmax;
+      width:100%;
+      height:50px;
+      text-align: center;
+      ion-icon {
+        font-size: 32px;
+        color:#fff;
+      }
+      &:hover{
+        ion-icon {
+          color:#EE6457;
+        }
+      }
+    }
+
+    }
+    
+    
     h2{
       text-align: center;
       color:#fff;
       line-height: 2.5;
     }
     h3{
-      text-align: center;
+      text-align: left;
       color:#fff;
       font-weight: 700;
       font-size:18px;
       line-height: 2.0;
     }
-
-    #contact-icons{
-      padding-top:20px;
-      width:100%;
-      @include flex(row,space-between,center);
-
-      a{
-        color:#fff;
-        &:hover{
-            color:$linkColor;
-          }
-        
-      }
-      ion-icon{
-        font-size: 24px;
-      }
-      @include for-size(tablet-portrait-up){
-        width:20%;
-      }
+    p{
+      // min-width:100%;
+      text-align: left;
+      color:#fff;
+      font-weight: 400;
+      font-size:18px;
+      font-style:normal;
+      line-height: 2.0;
     }
+
+
+    #socialContact{
+      grid-area:socials;
+      height:100%;
+      align-self: center;
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      // border-top: 1px solid #dfdfdf;
+      @include for-size(tablet-portrait-up){
+        padding-left:2.5em;
+        align-self: flex-start;
+        border-left: 1px solid #dfdfdf;
+      }
+
+
+  
+
+      #contact-icons{
+        padding-top:20px;
+        width:100%;
+        @include flex(row,space-between,center);
+        @include for-size(tablet-portrait-up){
+          flex-flow:column;
+          align-items: flex-start;
+        }
+  
+        a{
+          color:#fff;
+          &:hover{
+              color:$linkColor;
+              &:after{
+                color:$linkColor;
+              }
+            }
+          
+            display: flex;
+            flex-flow:row;
+            
+
+
+
+
+
+        }
+
+        a:nth-child(2){
+          @include for-size(tablet-portrait-up){
+          padding-top:5em;
+          padding-bottom:5em;
+          }
+        }
+
+        #fb::after,
+        #li::after,
+        #mail::after{
+          text-align: left;
+          // color:#fff;
+          font-weight: 600;
+          font-size:18px;
+          font-style:normal;
+          line-height: 2.0;
+          align-self: center;
+        }
+        #fb::after{
+          @include for-size(tablet-portrait-up){
+            content:"sliquilung";
+          }
+        }
+        #li::after{
+          @include for-size(tablet-portrait-up){
+            content:"Serghio Liqui Lung";
+          }
+        }
+
+        #mail::after{
+          @include for-size(tablet-portrait-up){
+            content:"Serghio.L(at)hotmail.com";
+          }
+        }
+        ion-icon{
+          font-size: 32px;
+          @include for-size(tablet-portrait-up){
+          font-size:50px;
+          }
+          @include for-size(tablet-portrait-up){
+            margin-right:10px;
+          }
+          
+
+
+        }
+        @include for-size(tablet-portrait-up){
+          width:100%;
+        }
+      }
+
+    }
+
   }
 }
 

@@ -10,6 +10,8 @@
   <link rel="stylesheet" type="text/css" href="CSS/Style.css" />
   <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>	
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body class="inactiveMenu">	  
   <header data-role ="header" id="header" class='navbar dark'>
@@ -199,24 +201,77 @@
     </section>
     </section>
     <section id="contact">
-      <section id="contact-text">
-        <h2 id="contactQuestion">Do you want to work together with me?</h2>
-        <h3>Just drop me a message</h3>
+        <h2 id="contactTitle">Do you want to work with me?</h2>
+      <section id="contactTypes">
+        <form
+        action="https://formspree.io/xnqgdydr"
+        method="POST"
+        id="contactForm"
+        >
+        <h3>Send me a message</h3>
+        <p>Hey Serghio,</p>
+        <p>
+          My
+          <label id="formName">
+            name
+          </label>
+          is 
+            <input type="text" name="name" minlength="3" placeholder="(your name)" required="">            
+            and
+        </p>
+
+          <p>
+            my
+            <label id="formEmail">
+              email address
+            </label>
+            is
+            <input type="email" name="_replyto" placeholder="(your email address)" required="">            
+          </p>
+          <p>
+            I am
+            <label id="formMessage">
+              emailing
+            </label>
+            you regarding
+            <br>
+            <textarea name="message" placeholder="(your message)" required=""></textarea>
+            
+
+          </p>
+
+
+        <!-- your other form fields go here -->
+
+          <button type="submit">
+            <ion-icon name="send"></ion-icon>
+          </button>
+        </form>
+        <section id="socialContact">
+
+          <h3>Or contact me via:</h3>
+
+          <section id="contact-icons">
+            <a href="https://www.facebook.com/sliquilung" target="_blank" id="fb">
+              <ion-icon name="logo-facebook"></ion-icon>
+              <!-- <p class=hiddenMobileText>sliquilung</p> -->
+            </a>
+            <a href="https://www.linkedin.com/in/serghio-liqui-lung/" target="_blank" id="li"> 
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <!-- <p class=hiddenMobileText>serghio-liqui-lung</p> -->
+            </a>
+            <a href="mailto:Serghio.L@hotmail.com?Subject=I%20want%20to%20work%20with%20you" target="_top" id="mail">
+              <ion-icon name="mail"></ion-icon>
+              <!-- <p class=hiddenMobileText>Serghio.L(at)hotmail.com</p> -->
+            </a>
+          </section>
+
       </section>
-      <section id="contact-icons">
-        <a href="https://www.facebook.com/sliquilung" target="_blank">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <a href="https://www.linkedin.com/in/serghio-liqui-lung/" target="_blank"> 
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a>
-        <a href="mailto:Serghio.L@hotmail.com?Subject=I%20want%20to%20work%20with%20you" target="_top">
-          <ion-icon name="mail"></ion-icon>
-        </a>
       </section>
+
+
     </section>
   </main>
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   <script src="JS/TweenMax.min.js"></script>
   <script src="JS/Main.js"></script>  
 </body>
