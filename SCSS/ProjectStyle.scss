@@ -60,7 +60,7 @@ body{
     margin-right:auto;
     background-color: #000;
     color:#fff;  
-    padding-top:20px;
+    // padding-top:20px;
     @include for-size(tablet-portrait-up){padding-top:0px;}
 
   }
@@ -103,6 +103,9 @@ body{
         }
     
         &:hover {
+          &:before {
+            color: $linkColor;
+          }
           color: $linkColor;
         }
     
@@ -119,8 +122,13 @@ body{
       .navbar-header{
         @extend %paddingContent;
         @include flex(row,flex-start , center);
-        height:100%;
-        widows: 100%;;
+        height:auto;
+        width: 100%;
+        background-color: #1d1d1d;
+        position: fixed;
+        z-index: 9999;
+        left:0;
+        top:0;
       }
   
       #menu-button{
@@ -159,13 +167,13 @@ main{
     @include for-size(tablet-landscape-up){
       @include flex(row,space-between,center);
     }
-    padding-top:40px;
+    padding-top:30px;
     padding-bottom:40px;
   }
 
 #work-title{
     grid-area: work-title;
-    padding: 0 20px;
+    // padding: 0 20px;
     height:95vh;
     @include for-size(small-phone){
       height:100%;
@@ -220,7 +228,7 @@ main{
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-color:$heroImageColor;}
+        background-color:#1d1d1d;}
         
 
 }
@@ -256,6 +264,8 @@ main{
     }
 
     #work-one, #work-two, #work-three{
+      padding-left:20%;
+      padding-right:20%;
       .workLinks{
         justify-self: center;
         text-align: center;

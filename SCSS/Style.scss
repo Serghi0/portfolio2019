@@ -664,6 +664,8 @@ main{
 
         @include for-size(tablet-landscape-up){
           text-align: right;
+          justify-content: flex-end;
+          align-items: center;
           flex-flow:row;
         }
         // .siteLink{
