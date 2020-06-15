@@ -37,7 +37,7 @@ tl
 			tlMenu
 				.set(body, {className: '-=activeMenu'})
 				.set(body, {className: '+=inactiveMenu'})		
-				.fromTo(menu,0.5, {autoAlpha:1, y:0},{autoAlpha:0,y:-100},-1);
+				.fromTo(menu,0, {autoAlpha:1, y:0},{autoAlpha:0,y:-100},-1);
 		} else {
 			menu.className = "active";
 			header.classList.remove("dark");
@@ -47,7 +47,7 @@ tl
 			tlMenu
 				.set(body, {className: '-=inactiveMenu'})
 				.set(body, {className: '+=activeMenu'})
-				.fromTo(menu,1, {autoAlpha:0, y:-100},{autoAlpha:1, y:0},-2);		
+				.fromTo(menu,0, {autoAlpha:0, y:-100},{autoAlpha:1, y:0},-2);		
 		}
 	};
 	

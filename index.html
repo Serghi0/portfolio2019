@@ -38,7 +38,6 @@
         </section>
     </section>
     <section id="about-me">
-      <section id="about-me-Title"><h2>About me</h2></section>
       <section id="about-me-Image">
           <figure>
             <picture>
@@ -51,6 +50,7 @@
           </figure>
       </section>
       <section id="about-me-Text">
+        <section id="about-me-Title"><h2>About me</h2></section>
         <p>
           I am an island guy born on the Dutch 
             Caribbean Island Curaçao and currently living 
@@ -201,60 +201,45 @@
     </section>
     </section>
     <section id="contact">
-        <h2 id="contactTitle">Do you want to work with me?</h2>
-      <section id="contactTypes">
+      <section id="contactform">
+
         <form
         action="https://formspree.io/xnqgdydr"
         method="POST"
         id="contactForm"
         >
-        <h3>Send me a message</h3>
-        <p>Hey Serghio,</p>
-        <p>
-          My
+        <h2 id="contactTitle">Get in touch</h2>
+        <h3>Feel free to message me below!</h3>
           <label id="formName">
-            name
+            <!-- Name -->
+            <input type="text" name="name" placeholder="Name" required="" minlength="3" pattern=".*\S.*">            
           </label>
-          is 
-            <input type="text" name="name" minlength="3" placeholder="(your name)" required="">            
-            and
-        </p>
-
-          <p>
-            my
-            <label id="formEmail">
-              email address
-            </label>
-            is
-            <input type="email" name="_replyto" placeholder="(your email address)" required="">            
-          </p>
-          <p>
-            I am
+          <label id="formEmail">
+            <!-- email address -->
+            <input type="email" name="_replyto" placeholder="Email address" required="">            
+          </label>
             <label id="formMessage">
-              emailing
+              <!-- Your message -->
+              <textarea name="message" placeholder="Your message" required=""></textarea>
             </label>
-            you regarding
-            <br>
-            <textarea name="message" placeholder="(your message)" required=""></textarea>
-            
-
-          </p>
 
 
         <!-- your other form fields go here -->
 
           <button type="submit">
+            Submit
             <ion-icon name="send"></ion-icon>
           </button>
         </form>
-        <section id="socialContact">
+      </section>  
 
-          <h3>Or contact me via:</h3>
+        <section id="contactMe">
+
+          <h2>Contact me</h2>
 
           <section id="contact-icons">
             <a href="https://www.facebook.com/sliquilung" target="_blank" id="fb">
               <ion-icon name="logo-facebook"></ion-icon>
-              <!-- <p class=hiddenMobileText>sliquilung</p> -->
             </a>
             <a href="https://www.linkedin.com/in/serghio-liqui-lung/" target="_blank" id="li"> 
               <ion-icon name="logo-linkedin"></ion-icon>
@@ -266,7 +251,6 @@
             </a>
           </section>
 
-      </section>
       </section>
 
 

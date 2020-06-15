@@ -35,7 +35,7 @@ padding: 0px 36.5px;
 }
 }
 
-$heroImageColor: #000;
+$heroImageColor: #1D1D1D;
 $sectionColor: #fff;
 $sectionAltColor: #D8E6E9;
 $attentionColor: #3B6068;
@@ -99,9 +99,9 @@ body{
 @mixin headerColor($active:true){
   @if $active{
     background-color: #f5f5f5;
-    color:#000;
+    color:#1D1D1D;
   }@else{
-    background-color: #000;
+    background-color: $heroImageColor;
     color:#fff;  
   }
 }
@@ -260,8 +260,8 @@ nav {
     }
 
     @include for-size(tablet-portrait-up){
-      padding-top: 0.5%;
-      padding-bottom: 0.5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
       flex-flow: row;
       justify-content: flex-end;
       align-items: center;
@@ -311,7 +311,7 @@ nav {
             color: #fff;
             font-size:16px !important;
             padding: 0.25em;
-            border-bottom: #000 1px solid;
+            border-bottom: $heroImageColor 1px solid;
             &:hover{
               color:$linkColor;
               border-bottom: $linkColor 1px solid;
@@ -328,7 +328,7 @@ nav {
 #menu {
   background-color: #f5f5f5;
   @include for-size(tablet-portrait-up){
-    background-color: #000;
+    background-color: $heroImageColor;
 
   }
 
@@ -377,12 +377,12 @@ main{
   #hero-image{
     grid-area: hero-image;
     // background-color: $heroImageColor;
-    height:100vh;
+    // height:75vh;
 @include for-size(phone-only){
-      height:100%;
+      height:75vh;
     }    
     @include for-size(desktop-up){
-      height:80vh;
+      height:70vh;
     }
     @include grid(1fr,1fr);
     .bg-text{
@@ -394,6 +394,9 @@ main{
       z-index: 2;
       width: 100%;
       height:100%;
+      @include for-size(phone-only){
+        align-self:center;
+      }
       h1{
         text-align: center;
         background: url("../Images/curacao.jpg") no-repeat;
@@ -416,7 +419,7 @@ main{
         @extend %paddingContent;
         text-align: center;
         color:$sectionColor;
-        font-weight: 700;
+        font-weight: 400;
       } 
     }
     .bg-image{
@@ -441,22 +444,23 @@ main{
     @extend %paddingContent;
     @include grid(auto, 1fr);
     grid-template-areas: 
-    "aMTitle"
     "aMPicture"
     "aMText";
     
     @include for-size(tablet-portrait-up){
+      padding-left:20%;
+      padding-right:20%;
       @include grid(auto, auto);
       grid-column-gap: 5%;
       grid-template-areas: 
-      "aMPicture aMTitle"
+      "aMPicture aMText"
       "aMPicture aMText";    
     }
 
 
     #about-me-Title{
       grid-area:aMTitle;
-      @include flex(column,center ,center );
+      @include flex(column,flex-start ,flex-start );
       @include for-size(tablet-portrait-up){
       align-items: flex-start;
       }
@@ -486,7 +490,7 @@ main{
     }
     #about-me-Text{
       grid-area:aMText;
-      @include flex(column,center ,center );
+      @include flex(column,flex-start ,flex-start );
     }
   }
 
@@ -568,10 +572,47 @@ main{
   %workLayout{
     @include flex(column,center ,center);
     @include for-size(tablet-landscape-up){
+      padding-left:20%;
+      padding-right:20%;
       @include flex(row,space-between,center);
     }
     padding-top:50px;
     padding-bottom:50px;
+  }
+
+  %secundaryButton{
+    .readMore, .siteLink{
+      border-radius:4px;
+      border: solid 1px $linkColor;
+      color: $linkColor;
+      padding: 5px 20px;
+      line-height: 2.2;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      font-size:16px;
+      font-family: $headerFont;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      ion-icon {
+        margin-left:5px;
+        font-size: 14px;
+        color:$sectionColor;
+      }
+      &:hover{
+        color:#000;
+        background-color: $hoverLinkColor;
+        border-color: $hoverLinkColor;
+      }
+    }
+    .siteLink{
+      margin-top: 10px;
+      @include for-size(tablet-landscape-up){
+        margin-left: 10px;
+        margin-top:0;
+      }
+    }
   }
 
     #work-title{
@@ -587,6 +628,7 @@ main{
       background-color: $sectionColor;
       @extend %paddingContent;
       @extend %workLayout;
+      @extend %secundaryButton;
     }
 
     #work-two{
@@ -594,6 +636,7 @@ main{
       background-color: $sectionAltColor;
       @extend %paddingContent;
       @extend %workLayout;
+      @extend %secundaryButton;
       @include for-size(tablet-landscape-up){
         @include flex(row-reverse,space-between ,center);
       }
@@ -605,6 +648,7 @@ main{
       background-color: $sectionColor;
       @extend %paddingContent;
       @extend %workLayout;
+      @extend %secundaryButton;
 
     }
 
@@ -613,17 +657,22 @@ main{
         margin-top:10px;
         justify-self: center;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow:column;
 
         @include for-size(tablet-landscape-up){
           text-align: right;
+          flex-flow:row;
         }
-        .siteLink{
-          // margin-top:25px;
-          border-left: solid 1px $attentionColor;
-          padding-left:1%;
-        }
+        // .siteLink{
+        //   // margin-top:25px;
+        //   border-left: solid 1px $attentionColor;
+        //   padding-left:1%;
+        // }
       }
-      p,a{
+      p{
         text-align: center;
         
         @include for-size(tablet-portrait-up){
@@ -653,198 +702,30 @@ main{
 
   #contact{
     grid-area:contact;
-    @include flex(column,center ,center);
-    background-color: $attentionColor;
+    background-color: $sectionAltColor;
     @extend %paddingContent;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    
+    padding-bottom: 2%;
+    padding-top: 5%;
+    @include flex(column,center ,center);
 
 
-
-    #contactTypes{
-      width:100%;
-      display: flex;
-      flex-flow:column;
-      @include for-size(tablet-portrait-up){
-        @include grid(auto,auto );
-        grid-template-areas: "form socials";
-        column-gap:1em;
-      }
+    @include for-size(tablet-landscape-up){
+      @include grid(1fr 3fr 1fr,repeat(2,1fr) repeat(2,2fr));
+      padding-left:20%;
+      padding-right:20%;
     }
-
-    form{
-      grid-area:form;
-      @include for-size(phone-only){
-        align-self:center;
-        margin-top:1em;
-        margin-bottom:1em;
-        @include flex(column,center ,center );
-
-      }
-
-      max-width: 90%;
-      align-self:flex-start;
-      width:100%;
-      @include for-size(small-phone){
-        align-self:center;
-      }
-      @include for-size(phone-only){
-        align-self:center;
-      }
-    
-      label {
-        cursor: text;
-    }
-
-    p{
-      font-family: $bodyFont;
-      // min-width:90%;
-      margin-bottom:1em;
-      @include for-size(phone-only){
-        margin-bottom:1.5em;
-      }
-      // color:#fff;
-
-      @include for-size(small-phone){
-        text-align:center;
-      }
-      @include for-size(phone-only){
-        text-align:center;
-      }
-    }
-    
-    textarea,
-    input {
-    outline: none;
-    border-radius: 0;
-    text-align: center;
-    background: none;
-    font-size: 18px;
-    font-weight: 600;
-    font-family: $headerFont;
-    color: #fff;
-    max-width: 100%;
-    padding: 1em;
-    box-sizing: border-box;
-    cursor: text;
-    border: 2px dashed rgba(255, 255, 255, 0);
-
-
-
-    }
-
-
-    textarea {
-      text-align: left;
-      resize: none;
-      width: 100%;
-      border-color: rgba(255, 255, 255, 0);
-    }
-
-    textarea:focus {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 2px dashed rgba(255, 255, 255, 1);
-    }
-
-    textarea:focus:required:valid {
-      border: 2px solid rgba(255, 255, 255, 0);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-    textarea:required:valid,
-    input:required:valid {
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-
-    input,
-    input:required,
-    textarea:required {
-      border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
-    }
-
-    input:focus {
-      border-bottom: 2px dashed rgba(255, 255, 255, 1);
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    input:required:invalid {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    ::placeholder{
-      font-style:italic;
-      text-align: center;
-      color: #fff;
-      opacity: 1;
-      font-weight: 600;
-      
-    }
-
-    ::-webkit-input-placeholder {
-      font-style:italic;
-      text-align: center;
-      color: #fff;
-      opacity: 1;
-      font-weight: 600;
-    }
-
-    :-moz-placeholder {
-      font-style:italic;
-      text-align: center;
-      color: #fff;
-      opacity: 1;
-      font-weight: 600;
-    }
-
-    ::-moz-placeholder{
-      font-style:italic;
-      text-align: center;
-      color: #fff;
-      opacity: 1;
-      font-weight: 600;
-    }
-
-    :-ms-input-placeholder {
-      font-style:italic;
-      text-align: center;
-      color: #fff;
-      font-weight: 600;
-    }
-
-    button{
-      background:none;
-      border:none;
-      outline:none;
-      margin:1em;
-      // margin:1vmax;
-      width:100%;
-      height:50px;
-      text-align: center;
-      cursor: pointer;
-      ion-icon {
-        font-size: 32px;
-        color:#fff;
-      }
-      &:hover{
-        ion-icon {
-          color:#EE6457;
-        }
-      }
-    }
-
-    }
-    
     
     h2{
-      text-align: center;
-      color:#fff;
+      text-align: left;
+      color:$heroImageColor;
       line-height: 2.5;
+
+      @include for-size(phone-only){
+        text-align: center;
+      }
     }
     h3{
-      text-align: center;
-      color:#fff;
+      color:$heroImageColor;
       font-weight: 700;
       font-size:18px;
       line-height: 2.0;
@@ -855,28 +736,261 @@ main{
     p{
       // min-width:100%;
       text-align: left;
-      color:#fff;
+      color:$heroImageColor;
       font-weight: 400;
       font-size:18px;
       font-style:normal;
       line-height: 2.0;
+    } 
+
+    #contactform{
+      z-index:1;
+      grid-column: 2 / span 3;
+      grid-row: 1 / span 3;
+      width:100%;
+      background-color: $sectionColor;
+      // -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+      // -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+      // box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+      padding: 5%;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      h2,h3{
+        align-self:flex-start;
+        @include for-size(phone-only){
+          align-self:center;
+        }
+      }
+    
+      form{
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+
+        //  padding-top: 15px;
+        grid-area:form;
+        @include for-size(phone-only){
+          // align-self:center;
+          margin-top:1em;
+          margin-bottom:1em;
+          @include flex(column,center ,center );
+  
+        }
+  
+        // max-width: 90%;
+        // align-self:flex-start;
+        width:75%;
+        @include for-size(small-phone){
+          align-self:center;
+        }
+        @include for-size(phone-only){
+          align-self:center;
+        }
+
+        #formName{
+          margin-top: 15px;
+        }
+      
+        label {
+          cursor: text;
+          margin-bottom:15px;
+          width:100%;
+      }
+      
+      textarea,
+      input {
+      outline: none;
+      border-radius: 0;
+      text-align: left;
+      border:none;
+      background-color: $sectionAltColor;
+      border: 1px solid $sectionAltColor;
+      // font-size: 18px;
+      // font-weight: 600;
+      font-family: $bodyFont;
+      color: $heroImageColor;
+      width: 100%;
+      padding: 1em;
+      box-sizing: border-box;
+      cursor: text;
+      // border: 2px dashed rgba(255, 255, 255, 0);
+  
+  
+  
+      }
+  
+  
+      textarea {
+        text-align: left;
+        resize: none;
+        width: 100%;
+        // border-color: rgba(255, 255, 255, 0);
+      }
+  
+      // textarea:focus {
+      //   // background-color: rgba(255, 255, 255, 0.2);
+      //   // border: 2px dashed rgba(255, 255, 255, 1);
+      // }
+  
+      // textarea:focus:required:valid {
+      //   // border: 2px solid rgba(255, 255, 255, 0);
+      //   // border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      // }
+  
+      textarea:required:valid,
+      input:required:valid {
+         background-color:$sectionAltColor;
+         border: 1px solid $sectionAltColor;
+        // border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      }
+  
+  
+      input:required,
+      textarea:required {
+        background-color:$sectionAltColor;
+        border: 1px solid $sectionAltColor;
+
+      //   &:not(:placeholder-shown) {
+      //     color: $heroImageColor;
+      //     background-color: #FFCEC6;
+      //     border: 1px solid #FFCEC6;
+      //     font-weight: 600;
+      // }
+
+      &:placeholder-shown{
+        background-color:$sectionAltColor !important;
+        border: 1px solid $sectionAltColor !important;
+      }
+    }
+  
+      input:focus, text-area:focus {
+        border: 1px solid $attentionColor;
+      }
+  
+      input:required:invalid,textarea:required:invalid {
+        color: $heroImageColor;
+        background-color: #FFCEC6;
+        border: 1px solid #FFCEC6;
+        font-weight: 600;
+      }
+
+
+      // input:placeholder-shown {
+      //   background-color:$sectionAltColor;
+      //   border: 1px solid $sectionAltColor;
+      // }
+  
+      ::placeholder{
+        text-align: left;
+        color: $heroImageColor;
+        opacity: 0.5;
+        font-weight: 600;
+        
+      }
+  
+      ::-webkit-input-placeholder {
+        text-align: left;
+        color: $heroImageColor;
+        opacity: 0.5;
+        font-weight: 600;
+      }
+  
+      :-moz-placeholder {
+        text-align: left;
+        color: $heroImageColor;
+        opacity: 0.5;
+        font-weight: 600;
+      }
+  
+      ::-moz-placeholder{
+        text-align: left;
+        color: $heroImageColor;
+        opacity: 0.5;
+        font-weight: 600;
+      }
+  
+      :-ms-input-placeholder {
+        text-align: left;
+        color: $heroImageColor;
+        opacity: 0.5;
+        font-weight: 600;
+      }
+  
+      button{
+        align-self: flex-end;
+        // @include for-size(phone-only){
+        //   align-self:center;
+        // }
+        background-color:$attentionColor;
+        border-radius:5px;
+        // border-color:$attentionColor;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        // text-align: center;
+        // text-decoration: none;
+        line-height: 2.2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:16px;
+        font-family: $headerFont;
+        font-weight: 600;
+        // width:25%;
+        // height:50px;
+        text-align: center;
+        cursor: pointer;
+        ion-icon {
+          margin-left:5px;
+          font-size: 14px;
+          color:$sectionColor;
+        }
+        &:hover{
+          background-color: #EE6457;
+          ion-icon {
+            color:$sectionColor;
+          }
+        }
+      }
+  
+      }
+    
     }
 
+    #contactMe{
+      z-index: 5;
+      // -webkit-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
+      // -moz-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
+      // box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
+      grid-column: 1/ span 2;
+      grid-row: 2;
+    h2,h3{
+      color: $sectionColor;
+    }
 
-    #socialContact{
-      grid-area:socials;
-      height:100%;
+      // grid-area:socials;
+      height:100%;width:auto;
+      @include for-size(phone-only){
+        width:100%;
+      }
       align-self: center;
-      width: 100%;
+      // width: 100%;
       display: flex;
       flex-flow: column;
       justify-content: flex-start;
       align-items: center;
+      background-color: $attentionColor;
+      padding:5%;
       // border-top: 1px solid #dfdfdf;
       @include for-size(tablet-portrait-up){
         padding-left:2.5em;
         align-self: flex-start;
-        border-left: 1px solid #dfdfdf;
+        // border-left: 1px solid #dfdfdf;
         align-items: flex-start;
       }
 
@@ -884,7 +998,7 @@ main{
   
 
       #contact-icons{
-        padding-top:20px;
+        padding-top:15px;
         width:100%;
         @include flex(row,space-between,center);
         @include for-size(tablet-portrait-up){
@@ -903,6 +1017,7 @@ main{
           
             display: flex;
             flex-flow:row;
+            align-items: center;
             
 
 
@@ -913,8 +1028,8 @@ main{
 
         a:nth-child(2){
           @include for-size(tablet-portrait-up){
-          padding-top:5em;
-          padding-bottom:5em;
+          padding-top:2em;
+          padding-bottom:2em;
           }
         }
 
@@ -924,7 +1039,7 @@ main{
           text-align: left;
           // color:#fff;
           font-weight: 600;
-          font-size:18px;
+          font-size:14px;
           font-style:normal;
           line-height: 2.0;
           align-self: center;
@@ -946,9 +1061,9 @@ main{
           }
         }
         ion-icon{
-          font-size: 32px;
+          font-size: 24px;
           @include for-size(tablet-portrait-up){
-          font-size:50px;
+          font-size:16px;
           }
           @include for-size(tablet-portrait-up){
             margin-right:10px;
