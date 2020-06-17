@@ -583,8 +583,8 @@ main{
   %secundaryButton{
     .readMore, .siteLink{
       border-radius:4px;
-      border: solid 1px $linkColor;
-      color: $linkColor;
+      border: solid 1px $attentionColor;
+      color: $attentionColor;
       padding: 5px 20px;
       line-height: 2.2;
       // display: flex;
@@ -598,12 +598,12 @@ main{
       ion-icon {
         margin-left:5px;
         font-size: 14px;
-        color:$sectionColor;
+        color:$attentionColor;
       }
       &:hover{
         color:#000;
-        background-color: $hoverLinkColor;
-        border-color: $hoverLinkColor;
+        background-color: $linkColor;
+        border-color: $linkColor;
       }
     }
     .siteLink{
