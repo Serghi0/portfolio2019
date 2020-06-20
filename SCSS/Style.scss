@@ -460,7 +460,8 @@ main{
 
     #about-me-Title{
       grid-area:aMTitle;
-      @include flex(column,flex-start ,flex-start );
+      width:100%;
+      @include flex(column,center ,center );
       @include for-size(tablet-portrait-up){
       align-items: flex-start;
       }
