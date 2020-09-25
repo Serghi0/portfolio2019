@@ -505,9 +505,17 @@ main{
     @extend %paddingContent;
     @include flex(column,center ,center );
 
+    #skills-Title{
+      padding-bottom:20px;
+      @include for-size(tablet-portrait-up){
+        padding-bottom:10px;
+    }
+  }
+
     .skillContainer{
       width:100%;
       @include flex(column,space-between ,center );
+
 
       @include for-size(tablet-portrait-up){
       @include flex(row,space-between ,flex-end );
@@ -519,10 +527,21 @@ main{
         @include flex(column,center ,center );
       }
 
+      #wireframe,#design{
+        padding-bottom: 50px;
+        @include for-size(tablet-portrait-up){
+        padding-bottom:0;
+        }
+      }
+
     }
     .skillImage{
-      height:140px;
-      width:140px;
+      height:250px;
+      width:250px;
+      @include for-size(phone-only){
+        height:200px;
+        width:200px;      
+      }
         // background-position: center;
         // background-size: 110px 140px;
       figure{
