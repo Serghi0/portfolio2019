@@ -62,3 +62,20 @@ tl
 	// 	});
 		
 	//   });
+
+	gsap.fromTo("#about-me", {
+		scrollTrigger: "#about-me", // start the animation when ".box" enters the viewport (once)
+		y: 200,
+		autoAlpha:0
+	  },{
+		scrollTrigger: "#about-me",
+		y:0,
+		autoAlpha:1
+	});
+	gsap.fromTo("#skills", {
+		scrollTrigger: "#skills", // start the animation when ".box" enters the viewport (once)
+		visibility:hidden
+	  },{
+		scrollTrigger: "#skills",
+visibility:show
+	});
