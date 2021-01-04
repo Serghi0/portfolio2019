@@ -66,7 +66,7 @@ tl
 	gsap.fromTo("#about-me", {
 		scrollTrigger: "#about-me", // start the animation when ".box" enters the viewport (once)
 		y: 200,
-		autoAlpha:0
+		autoAlpha:0	  
 	  },{
 		scrollTrigger: "#about-me",
 		duration:1,
@@ -77,7 +77,7 @@ tl
 		scrollTrigger: "#skills", // start the animation when ".box" enters the viewport (once)
 		y:200,
 		autoAlpha:0
-	  },{
+		  },{
 		scrollTrigger: "#skills",
 		y:0,
 		autoAlpha:1
