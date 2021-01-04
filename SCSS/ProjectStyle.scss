@@ -28,8 +28,8 @@ padding: 0px 36.5px;
 
 $heroImageColor: #000;
 $sectionColor: #fff;
-$sectionAltColor: #97bec6;
-$attentionColor: #034c5f;
+$sectionAltColor: #D8E6E9;
+$attentionColor: #3B6068;
 
 html,
 body,
@@ -45,7 +45,7 @@ html{
 
 body{
     @include grid(auto,1fr);
-    background-color: #000;
+    background-color: #fff;
     grid-template-areas:
     "header"
     "main";
