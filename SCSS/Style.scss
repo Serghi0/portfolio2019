@@ -60,6 +60,7 @@ ol {
 
 html{
   height:100%;
+  
 }
 
 @mixin activeMenuLayout($active:true) {
@@ -83,7 +84,7 @@ html{
 body{
   @include grid(auto,1fr);
   background-color: #fff;
-
+  // max-width:100vw;
 }
 
 .activeMenu{
