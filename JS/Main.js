@@ -79,6 +79,7 @@ tl
 		autoAlpha:0
 		  },{
 		scrollTrigger: "#skills",
+		duration:1,
 		y:0,
 		autoAlpha:1
 	});
