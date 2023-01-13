@@ -366,6 +366,7 @@ main{
   @include grid(auto, 1fr);
   // row-gap: 50px;
   background-color:$sectionColor;
+  // grid-gap:5%;
   grid-template-areas:
   "hero-image"
   "about-me"
@@ -383,7 +384,7 @@ main{
       height:75vh;
     }    
     @include for-size(desktop-up){
-      height:70vh;
+      height:80vh;
     }
     @include grid(1fr,1fr);
     .bg-text{
@@ -441,6 +442,7 @@ main{
     padding-top:50px;
     padding-bottom: 50px;
     background-color: $sectionColor;
+    // border-top: solid $attentionColor;
     grid-area:about-me;
     @extend %paddingContent;
     @include grid(auto, 1fr);
@@ -886,16 +888,16 @@ main{
       // }
 
       &:placeholder-shown{
-        background-color:$sectionAltColor !important;
-        border: 1px solid $sectionAltColor !important;
+        background-color:$sectionAltColor;
+        border: 1px solid $sectionAltColor;
       }
     }
   
-      input:focus, text-area:focus {
-        border: 1px solid $attentionColor;
-      }
+      // input:focus, text-area:focus {
+      //   border: 1px solid $attentionColor !important;
+      // }
   
-      input:required:invalid,textarea:required:invalid {
+      input:required:invalid:focus,textarea:required:invalid:focus {
         color: $heroImageColor;
         background-color: #FFCEC6;
         border: 1px solid #FFCEC6;
