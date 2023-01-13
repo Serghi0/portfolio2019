@@ -29,16 +29,7 @@ tl
 			header = document.getElementById('header'),
 			body = document.getElementsByTagName("BODY")[0],
 			tlMenu = new TimelineMax();
-		if(menu.className == "active"){
-			menu.className = "inactive";
-			header.classList.remove("light");
-			header.classList.add("dark");
-			  document.getElementById('hamburgerIcon').classList.remove("activeMenu");
-			tlMenu
-				.set(body, {className: '-=activeMenu'})
-				.set(body, {className: '+=inactiveMenu'})		
-				.fromTo(menu,0, {autoAlpha:1, y:0},{autoAlpha:0,y:-100},-1);
-		} else {
+		if(menu.className == "inactive"){
 			menu.className = "active";
 			header.classList.remove("dark");
 			header.classList.add ("light");
@@ -47,7 +38,25 @@ tl
 			tlMenu
 				.set(body, {className: '-=inactiveMenu'})
 				.set(body, {className: '+=activeMenu'})
-				.fromTo(menu,0, {autoAlpha:0, y:-100},{autoAlpha:1, y:0},-2);		
+				.fromTo(menu,0, {autoAlpha:0, y:-100},{autoAlpha:1, y:0},-2);	
+				// document.body.classList.add('activeMenu');
+
+				// document.body.classList.remove('inactiveMenu');
+		} 
+		else {
+
+				
+			menu.className = "inactive";
+			header.classList.remove("light");
+			header.classList.add("dark");
+				document.getElementById('hamburgerIcon').classList.remove("activeMenu");
+			tlMenu
+				.set(body, {className: '-=activeMenu'})
+				.set(body, {className: '+=inactiveMenu'})		
+				.fromTo(menu,0, {autoAlpha:1, y:0},{autoAlpha:0,y:-100},-1);	
+				// document.body.classList.add('inactiveMenu');
+
+				// document.body.classList.remove('activeMenu');
 		}
 	};
 	
