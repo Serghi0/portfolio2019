@@ -312,11 +312,17 @@ main {
 @media (max-width: 360px) {
   #work-title {
     height: 100%;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 @media (min-width: 1280px) {
   #work-title {
     height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
   }
 }
 #work-title .bg-text {

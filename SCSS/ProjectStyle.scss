@@ -182,9 +182,11 @@ main{
     height:95vh;
     @include for-size(small-phone){
       height:100%;
+      @include grid(2fr 1fr,1fr);
     }    
     @include for-size(desktop-up){
       height:100%;
+      @include grid( 1fr,2fr 1fr);
     }
     background-position: center;
     background-repeat: no-repeat;
